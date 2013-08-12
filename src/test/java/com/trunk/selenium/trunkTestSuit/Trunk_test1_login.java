@@ -26,7 +26,7 @@ public class Trunk_test1_login {
 
   @Test
   public void testTrueTrue() throws Exception {
-    assert(true = true);
+    assertTrue(false);
   } 
 
   public void testTrunkTest1HOMEPAGEVerification() throws Exception {
