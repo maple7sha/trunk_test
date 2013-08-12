@@ -25,6 +25,10 @@ public class Trunk_test1_login {
   }
 
   @Test
+  public void testTrueTrue() throws Exception {
+    assert(true = true);
+  } 
+
   public void testTrunkTest1HOMEPAGEVerification() throws Exception {
     driver.get(baseUrl + "/xsl-portal");
     // lesson learned: must know to switch to the frame!!
