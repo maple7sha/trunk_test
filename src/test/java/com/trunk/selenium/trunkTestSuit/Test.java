@@ -1,9 +1,9 @@
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
-public class Test {
+public class Test_suit {
 
-  public static Test suite() {
+  public static Test_suit suite() {
     TestSuite suite = new TestSuite();
     suite.addTestSuite(Trunk_test1_login.class);
     suite.addTestSuite(Trunk_test2_upload.class);
