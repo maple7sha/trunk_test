@@ -38,8 +38,16 @@
         <includes>
 	    	<include>**/*.java</include>
         </includes>
+        
+        <useManifestOnlyJar>false</useManifestOnlyJar>  
+        <useSystemClassLoader>false</useSystemClassLoader>
+        <additionalClasspathElements>
+          <additionalClasspathElement>**/*.java</additionalClasspathElement>
+
+        </additionalClasspathElements>
       </configuration>
     </plugin>
   </plugins>
   </build>
+
 </project>
