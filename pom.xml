@@ -56,7 +56,7 @@
                 <configuration>
                     <sources>
                         <source>src/test/java/com/trunk/selenium/trunkTestSuit</source>
-
+                        <source>src</source>
                     </sources>
                 </configuration>
             </execution>
