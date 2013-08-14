@@ -42,8 +42,7 @@
         <useManifestOnlyJar>false</useManifestOnlyJar>  
         <useSystemClassLoader>false</useSystemClassLoader>
         <additionalClasspathElements>
-          <additionalClasspathElement>**/*.java</additionalClasspathElement>
-
+          <additionalClasspathElement>C:/Users/VEK/Documents/GitHub/trunk_test/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
         </additionalClasspathElements>
       </configuration>
     </plugin>
