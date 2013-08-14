@@ -39,7 +39,7 @@
         <useManifestOnlyJar>false</useManifestOnlyJar>  
         <useSystemClassLoader>false</useSystemClassLoader>
         <additionalClasspathElements>
-          <additionalClasspathElement>C:/Users/VEK/Documents/GitHub/trunk_test/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
+          <additionalClasspathElement>**/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
         </additionalClasspathElements>
         <includes>
 	    	<include>**/*.java</include>
