@@ -10,7 +10,6 @@ public class Test_suit {
     suite.addTestSuite(Trunk_test3_tuftsNow.class);
     suite.addTestSuite(Trunk_test4_communication.class);
     suite.addTestSuite(Trunk_test5_mysetting.class);
-    suite.addTestSuite(DoSomeActionTest.class);
     return suite;
   }
 
