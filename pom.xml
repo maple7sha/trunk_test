@@ -40,6 +40,7 @@
         <useSystemClassLoader>false</useSystemClassLoader>
         <additionalClasspathElements>
           <additionalClasspathElement>**/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
+          <additionalClasspathElement>C:\Users\VEK\.jenkins\jobs\Trunktest\workspace\target\test-classes\com\trunk\selenium\trunkTestSuit</additionalClasspathElement>
         </additionalClasspathElements>
         <includes>
 	    	<include>**/*suit.java</include>
