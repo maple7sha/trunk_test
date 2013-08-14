@@ -35,15 +35,16 @@
       <artifactId>maven-surefire-plugin</artifactId>
       <version>2.15</version>
       <configuration>
-        <includes>
-	    	<include>**/*.java</include>
-        </includes>
         
         <useManifestOnlyJar>false</useManifestOnlyJar>  
         <useSystemClassLoader>false</useSystemClassLoader>
         <additionalClasspathElements>
           <additionalClasspathElement>C:/Users/VEK/Documents/GitHub/trunk_test/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
         </additionalClasspathElements>
+        <includes>
+	    	<include>**/*.java</include>
+        </includes>
+
       </configuration>
     </plugin>
   </plugins>
