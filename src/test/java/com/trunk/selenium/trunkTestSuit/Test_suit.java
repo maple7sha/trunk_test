@@ -3,7 +3,7 @@ import junit.framework.TestSuite;
 
 public class Test_suit {
 
-  public static Test_suit suite() {
+  public static TestSuite suite() {
     TestSuite suite = new TestSuite();
     suite.addTestSuite(Trunk_test1_login.class);
     suite.addTestSuite(Trunk_test2_upload.class);
