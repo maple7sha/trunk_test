@@ -42,7 +42,7 @@
           <additionalClasspathElement>**/src/test/java/com/trunk/selenium/trunkTestSuit/*.java</additionalClasspathElement>
         </additionalClasspathElements>
         <includes>
-	    	<include>**/*.java</include>
+	    	<include>**/*suit.java</include>
         </includes>
 
       </configuration>
