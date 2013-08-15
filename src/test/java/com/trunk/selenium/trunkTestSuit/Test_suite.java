@@ -4,8 +4,6 @@ import junit.framework.TestSuite;
 import com.trunk.selenium.trunkTestSuit.*;
 
 
-
-
 public class Test_suite {
   public static TestSuite suite() {
     TestSuite suite = new TestSuite();
