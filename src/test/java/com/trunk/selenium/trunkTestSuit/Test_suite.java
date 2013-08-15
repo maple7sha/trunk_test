@@ -1,14 +1,15 @@
 import junit.framework.Test;
 import junit.framework.TestSuite;
+import Trunk_test1_login;
 
 public class Test_suite {
   public static TestSuite suite() {
     TestSuite suite = new TestSuite();
     suite.addTestSuite(Trunk_test1_login.class);
-    /**suite.addTestSuite(Trunk_test2_upload.class);
+    suite.addTestSuite(Trunk_test2_upload.class);
     suite.addTestSuite(Trunk_test3_tuftsNow.class);
     suite.addTestSuite(Trunk_test4_communication.class);
-    suite.addTestSuite(Trunk_test5_mysetting.class); **/
+    suite.addTestSuite(Trunk_test5_mysetting.class); 
     return suite;
   }
 
