@@ -1,39 +1,7 @@
 package com.trunk.selenium.trunkTestSuit;
-
-
-
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite; 
-import junit.textui.TestRunner;
-
-public class Test_suite {
-
-public static Test suite() 
-{ 
-TestSuite nag = new TestSuite(); 
-
-nag.addTestSuite( Trunk_test1_login.class);
-
-return nag; 
-} 
-
-public static void main(String arg[])
-{
-TestRunner.run(suite());
-
-}
-}
-
-
-
-
-
-/**
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -48,7 +16,7 @@ public class Test_suite{
 }
 
 
-
+/**
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import com.trunk.selenium.trunkTestSuit.*;
