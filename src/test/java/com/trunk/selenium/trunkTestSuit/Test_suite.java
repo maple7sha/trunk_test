@@ -1,6 +1,12 @@
 import junit.framework.Test;
 import junit.framework.TestSuite;
-import Trunk_test1_login;
+import com.trunk.selenium.trunkTestSuit;
+
+
+
+
+
+
 
 public class Test_suite {
   public static TestSuite suite() {
