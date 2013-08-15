@@ -1,7 +1,7 @@
 package com.trunk.selenium.trunkTestSuit;
 import junit.framework.Test;
 import junit.framework.TestSuite;
-//import com.trunk.selenium.trunkTestSuit;
+import com.trunk.selenium.trunkTestSuit.*;
 
 
 
