@@ -77,6 +77,8 @@ public class Trunk_test2_upload {
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
     
+    driver.switchTo().defaultContent();
+    driver.findElement(By.linkText("Logout")).click();
     // following code can be added later to make it work.
     /**
     driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();

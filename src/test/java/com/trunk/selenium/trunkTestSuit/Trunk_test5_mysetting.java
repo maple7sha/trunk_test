@@ -26,16 +26,17 @@ public class Trunk_test5_mysetting {
   @Test
   public void testTrunkTest5() throws Exception {
 	login_key.login(baseUrl, driver);
-	  
-    driver.get(baseUrl + "/xsl-portal/site/%7E%40haowan/page/27a5411e-741f-4e3b-a5ca-59f8092f6993");
+
+	// go to profile tab and test
     driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main23db53f0x04b0x4048xab5fx6d7c76d1adc9 | ]]
+    driver.switchTo().frame(0);
+
     driver.findElement(By.name("message")).clear();
-    driver.findElement(By.name("message")).sendKeys("say something");
+    driver.findElement(By.name("message")).sendKeys("say something different");
     driver.findElement(By.name(":submit")).click();
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
-    driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).clear();
-    driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys("C:\\sample.jpg");
+    //driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).clear();
+    driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys("C:\\Users\\VEK\\Desktop\\sample.jpg");
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
     driver.findElement(By.cssSelector("img")).click();
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
@@ -48,27 +49,31 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton")).click();
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=up | ]]
+    
+    driver.switchTo().defaultContent();  // change back to parent frame 
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main6b5dd637x01fbx42ffx86bex4a1145c88515 | ]]
+    driver.switchTo().frame(0);
     driver.findElement(By.linkText("Joinable Sites")).click();
     driver.findElement(By.linkText("Join")).click();
     driver.findElement(By.linkText("My Current Sites")).click();
     driver.findElement(By.id("check-2")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinconfirm")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinyes")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=up | ]]
+    
+    driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-preferences > span")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main82343889x1968x44ecx8d79x35c9d6badb4f | ]]
+    driver.switchTo().frame(0);
+    
+    Thread.sleep(5000);
     // ERROR: Caught exception [ERROR: Unsupported command [addSelection | name=prefs_form:_id35 | label=1st Year Portfolio]]
     driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
     // ERROR: Caught exception [ERROR: Unsupported command [addSelection | name=prefs_form:_id43 | label=1st Year Portfolio]]
     driver.findElement(By.cssSelector("img[alt=\"Remove all\"]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=up | ]]
+    driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
+    driver.switchTo().defaultContent();
     driver.findElement(By.linkText("Logout")).click();
-    driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
   }
 
   @After

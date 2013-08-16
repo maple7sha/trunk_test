@@ -113,6 +113,7 @@ public class Trunk_test1_login {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+
     driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
   }
 

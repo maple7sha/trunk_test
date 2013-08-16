@@ -26,23 +26,11 @@ public class Trunk_test4_communication {
   @Test
   public void testTrunkTest4() throws Exception {
 	login_key.login(baseUrl, driver);
-	  
-    driver.get(baseUrl + "/xsl-portal");
-    driver.switchTo().frame(0);
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah1");
-    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah");
-    driver.findElement(By.id("submit")).click();
-    driver.get(baseUrl + "/xsl-portal/site/%7E%40haowan/page/fe0e955a-c1e3-42af-8ce3-0a06ceb12e9a");
+
     driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main55f9c3d7xd2aex4f42x84e4xe14f79917a8d | ]]
+    driver.switchTo().frame(0);
+    
     driver.findElement(By.linkText("Add")).click();
     driver.findElement(By.id("activitytitle")).clear();
     driver.findElement(By.id("activitytitle")).sendKeys("new event");
@@ -58,7 +46,8 @@ public class Trunk_test4_communication {
     driver.findElement(By.linkText("new event")).click();
     driver.findElement(By.name("eventSubmit_doDelete")).click();
     driver.findElement(By.name("eventSubmit_doConfirm")).click();
-    driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
+    driver.switchTo().defaultContent();
+    driver.findElement(By.linkText("Logout")).click();
   }
 
   @After
