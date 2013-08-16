@@ -14,7 +14,8 @@ public class Trunk_test4_communication {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-
+  Help_login login_key = new Help_login();
+  
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
@@ -23,7 +24,9 @@ public class Trunk_test4_communication {
   }
 
   @Test
-  public void testTrunkTest1HOMEPAGEVerification() throws Exception {
+  public void testTrunkTest4() throws Exception {
+	login_key.login(baseUrl, driver);
+	  
     driver.get(baseUrl + "/xsl-portal");
     driver.switchTo().frame(0);
     driver.findElement(By.id("eid")).clear();

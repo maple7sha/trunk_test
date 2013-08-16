@@ -16,7 +16,8 @@ public class Trunk_test1_login {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-
+  Help_login login_key = new Help_login();
+  
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
@@ -25,24 +26,12 @@ public class Trunk_test1_login {
   }
 
   @Test
-  public void testTrueTrue() throws Exception {
-    assertTrue(false);
-  } 
+  public void testTrunkTest1() throws Exception {
+	login_key.login(baseUrl, driver);
 
-  public void testTrunkTest1HOMEPAGEVerification() throws Exception {
-    driver.get(baseUrl + "/xsl-portal");
-    // lesson learned: must know to switch to the frame!!
-    driver.switchTo().frame(0);
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah1");
-    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah");
-    driver.findElement(By.id("submit")).click();
+
+
+    
     try {
       assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]")));
     } catch (Error e) {

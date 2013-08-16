@@ -14,7 +14,8 @@ public class Trunk_test5_mysetting {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-
+  Help_login login_key = new Help_login();
+  
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
@@ -23,19 +24,9 @@ public class Trunk_test5_mysetting {
   }
 
   @Test
-  public void testTrunkTest1HOMEPAGEVerification() throws Exception {
-    driver.get(baseUrl + "/xsl-portal");
-    driver.switchTo().frame(0);
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah1");
-    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah");
-    driver.findElement(By.id("submit")).click();
+  public void testTrunkTest5() throws Exception {
+	login_key.login(baseUrl, driver);
+	  
     driver.get(baseUrl + "/xsl-portal/site/%7E%40haowan/page/27a5411e-741f-4e3b-a5ca-59f8092f6993");
     driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
     // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main23db53f0x04b0x4048xab5fx6d7c76d1adc9 | ]]

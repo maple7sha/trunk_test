@@ -13,7 +13,8 @@ public class Trunk_test2_upload {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-
+  Help_login login_key = new Help_login();
+  
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
@@ -22,19 +23,9 @@ public class Trunk_test2_upload {
   }
 
   @Test
-  public void test2New() throws Exception {
-    driver.get(baseUrl + "/xsl-portal");
-    driver.switchTo().frame(0);
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah1");
-    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah");
-    driver.findElement(By.id("submit")).click();
+  public void testTrunkTest2() throws Exception {
+	login_key.login(baseUrl, driver);
+	/* To verify the presence of menu elements of the webpage */
     try {
       assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]")));
     } catch (Error e) {
@@ -60,71 +51,34 @@ public class Trunk_test2_upload {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Workspace[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Home[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Sites[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Hello,[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Logout[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Communications[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Tools[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Settings[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Help[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    driver.findElement(By.cssSelector("a.icon-sakai-resources > span")).click();
+
+    driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
     
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Main281860a9xec2ex48c6xb231xf4128c8c726f | ]]
-    // problem here! how to select the file there?
-    driver.findElement(By.linkText("Upload Files")).click();
-    driver.findElement(By.id("content_0")).clear();
-    driver.findElement(By.id("content_0")).sendKeys("C:\\sample.txt");
+
+    
+    
+    
+    /* Upload Files */
+    driver.switchTo().frame(0);
+    /* This is how href to js should be triggered! just click the value!*/
+    ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('selectedItemId').value='/user/5005cc99-5e90-40d1-a623-2bf36885f5a9/';document.getElementById('rt_action').value='org.sakaiproject.content.types.fileUpload:create';document.getElementById('sakai_action').value='doDispatchAction';submitform('showForm');");        
+    //should not hardcode the file address ==> abstract it!  
+    driver.findElement(By.id("content_0")).sendKeys("C:\\Users\\VEK\\Desktop\\sample.txt");
     driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys("this is a sample upload");
-    new Select(driver.findElement(By.id("copyright_0"))).selectByVisibleText("I hold copyright.");
+    driver.findElement(By.id("newcopyright_0")).clear();
+    driver.findElement(By.id("newcopyright_0")).sendKeys("this is a sample upload");
     driver.findElement(By.id("saveChanges")).click();
+ 
+
+    /* Delete all uploaded files */
+
+    driver.findElement(By.id("selectall")).click();
+    ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
+    driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
+    
+    // following code can be added later to make it work.
+    /**
     driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();
     driver.findElement(By.linkText("Duplicate")).click();
     driver.findElement(By.cssSelector("#9994 > img.dropdn")).click();
@@ -159,6 +113,7 @@ public class Trunk_test2_upload {
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
     driver.findElement(By.xpath("(//a[contains(text(),'Remove')])[2]")).click();
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
+    **/
   }
 
   @After
@@ -166,6 +121,7 @@ public class Trunk_test2_upload {
     driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
+      System.out.println(verificationErrorString);
       fail(verificationErrorString);
     }
   }

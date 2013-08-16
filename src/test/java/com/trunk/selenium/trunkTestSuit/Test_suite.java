@@ -17,6 +17,7 @@ public class Test_suite{
 
 
 /**
+ * junit 3 version of test suite, which does not work 
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import com.trunk.selenium.trunkTestSuit.*;

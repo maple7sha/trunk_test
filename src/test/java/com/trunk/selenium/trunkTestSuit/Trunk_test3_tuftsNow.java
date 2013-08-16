@@ -14,7 +14,8 @@ public class Trunk_test3_tuftsNow {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-
+  Help_login login_key = new Help_login();
+  
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
@@ -23,24 +24,14 @@ public class Trunk_test3_tuftsNow {
   }
 
   @Test
-  public void testTrunkTest1HOMEPAGEVerification() throws Exception {
-    driver.get(baseUrl + "/xsl-portal");
-    driver.switchTo().frame(0);
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah1");
-    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-    driver.findElement(By.id("eid")).clear();
-    driver.findElement(By.id("eid")).sendKeys("@haowan");
-    driver.findElement(By.id("pw")).clear();
-    driver.findElement(By.id("pw")).sendKeys("nawoah");
-    driver.findElement(By.id("submit")).click();
-    
-    
-    driver.findElement(By.xpath("(//span[contains(text(),'Tufts Now')])")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | Maindb20b8d4x4ab2x48adxbe69xf738ae7cea16 | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | wciframe | ]]
+  public void testTrunkTest3() throws Exception {
+	login_key.login(baseUrl, driver);
+	
+	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();   
+        
+	driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
+	
+    driver.switchTo().frame(1);
     driver.findElement(By.id("menu-965")).click();
     driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
