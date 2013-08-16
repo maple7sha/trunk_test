@@ -29,16 +29,18 @@ public class Trunk_test3_tuftsNow {
 
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();   
 	
-    //driver.switchTo().frame(1);
+	// got to switch to outer frame first, then switch to inner frame!!!!!
+	driver.switchTo().frame(0);
+    driver.findElement(By.linkText("Options")).click();
+    new Select(driver.findElement(By.id("height"))).selectByVisibleText("750 pixels");
+    driver.findElement(By.name("eventSubmit_doConfigure_update")).click();
+    driver.switchTo().frame(0);
+    driver.switchTo().frame(driver.findElement(By.id("wciframe")));
     driver.findElement(By.id("menu-965")).click();
     driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
     driver.findElement(By.id("edit-keys")).sendKeys("what is this");
     driver.findElement(By.id("edit-submit")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=up | ]]
-    driver.findElement(By.linkText("Options")).click();
-    new Select(driver.findElement(By.id("height"))).selectByVisibleText("750 pixels");
-    //driver.findElement(By.name("eventSubmit_doConfigure_update")).click();
   }
 
   @After
