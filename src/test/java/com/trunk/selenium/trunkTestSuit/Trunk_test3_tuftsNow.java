@@ -26,12 +26,10 @@ public class Trunk_test3_tuftsNow {
   @Test
   public void testTrunkTest3() throws Exception {
 	login_key.login(baseUrl, driver);
-	
+
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();   
-        
-	driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
 	
-    driver.switchTo().frame(1);
+    //driver.switchTo().frame(1);
     driver.findElement(By.id("menu-965")).click();
     driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
