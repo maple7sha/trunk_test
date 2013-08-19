@@ -8,7 +8,9 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.Select;
 
 public class Help_params {
@@ -40,11 +42,12 @@ public class Help_params {
 	}
 	
 	public WebDriver get_driver(WebDriver driver){
-		//String Xport = System.getProperty("importal.xvfb.id", ":1");
-		//FirefoxBinary firefoxBinary = new FirefoxBinary();
-		
-		
-		driver = new FirefoxDriver();
+		// driver = new FirefoxDriver();
+		/* attempts to run headless only, though this does not change anything on windows */
+		String Xport = System.getProperty("display.props");
+		FirefoxBinary ffox = new FirefoxBinary();
+		FirefoxProfile ffp = new FirefoxProfile();
+		driver = new FirefoxDriver(ffox, ffp);
 		return driver;
 	}
 }
