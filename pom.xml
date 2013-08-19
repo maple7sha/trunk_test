@@ -30,8 +30,6 @@
   </dependencies>
   <build>
 
-
-
   <plugins>
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
@@ -59,7 +57,6 @@
 					<goal>xvfb</goal>
 				</goals>
 			</execution>
-
 			<execution>
 				<id>selenium</id>
 				<phase>pre-integration-test</phase>
