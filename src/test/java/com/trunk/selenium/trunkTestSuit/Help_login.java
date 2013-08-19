@@ -24,10 +24,8 @@ public class Help_login {
 	    driver.findElement(By.id("pw")).clear();
 	    driver.findElement(By.id("pw")).sendKeys("wrong password");
 	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-
-
+	    // re-login
 	    driver.findElement(By.id("eid")).sendKeys(getUname());
-
 	    driver.findElement(By.id("pw")).sendKeys(getPword());
 	    driver.findElement(By.id("submit")).click();
 	}

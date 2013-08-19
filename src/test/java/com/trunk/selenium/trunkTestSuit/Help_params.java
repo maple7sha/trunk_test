@@ -1,5 +1,16 @@
 package com.trunk.selenium.trunkTestSuit;
 
+import java.io.PrintStream;
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
 public class Help_params {
 	public String get_sample_txt(){
 		return "C:\\Users\\VEK\\Desktop\\sample.txt";
@@ -28,5 +39,12 @@ public class Help_params {
 		return "I am happy today";
 	}
 	
-	
+	public WebDriver get_driver(WebDriver driver){
+		//String Xport = System.getProperty("importal.xvfb.id", ":1");
+		//FirefoxBinary firefoxBinary = new FirefoxBinary();
+		
+		
+		driver = new FirefoxDriver();
+		return driver;
+	}
 }

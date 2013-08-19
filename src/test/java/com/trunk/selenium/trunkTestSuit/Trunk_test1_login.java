@@ -7,11 +7,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Trunk_test1_login {
-	
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,7 +21,7 @@ public class Trunk_test1_login {
   
   @Before
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
+	driver = params.get_driver(driver);
     baseUrl = params.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
@@ -29,7 +29,7 @@ public class Trunk_test1_login {
   @Test
   public void testTrunkTest1() throws Exception {
 	login_key.login(baseUrl, driver);
-
+	
     try {
       assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]")));
     } catch (Error e) {
