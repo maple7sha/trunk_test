@@ -14,12 +14,13 @@ public class Trunk_test5_mysetting {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-  Help_login login_key = new Help_login();
+  private Help_login login_key = new Help_login();
+  private Help_params params = new Help_params();
   
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://trunk-stage.tufts.edu/";
+    baseUrl = params.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -30,13 +31,11 @@ public class Trunk_test5_mysetting {
 	// go to profile tab and test
     driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
     driver.switchTo().frame(0);
-
     driver.findElement(By.name("message")).clear();
-    driver.findElement(By.name("message")).sendKeys("say something different");
+    driver.findElement(By.name("message")).sendKeys(params.get_saysth_text());
     driver.findElement(By.name(":submit")).click();
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
-    //driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).clear();
-    driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys("C:\\Users\\VEK\\Desktop\\sample.jpg");
+    driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys(params.get_sample_jpg());
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
     driver.findElement(By.cssSelector("img")).click();
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
@@ -65,9 +64,7 @@ public class Trunk_test5_mysetting {
     driver.switchTo().frame(0);
     
     Thread.sleep(5000);
-    // ERROR: Caught exception [ERROR: Unsupported command [addSelection | name=prefs_form:_id35 | label=1st Year Portfolio]]
     driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [addSelection | name=prefs_form:_id43 | label=1st Year Portfolio]]
     driver.findElement(By.cssSelector("img[alt=\"Remove all\"]")).click();
     driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();

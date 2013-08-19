@@ -14,12 +14,13 @@ public class Trunk_test3_tuftsNow {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-  Help_login login_key = new Help_login();
+  private Help_login login_key = new Help_login();
+  private Help_params params = new Help_params();
   
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://trunk-stage.tufts.edu/";
+    baseUrl = params.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -27,8 +28,7 @@ public class Trunk_test3_tuftsNow {
   public void testTrunkTest3() throws Exception {
 	login_key.login(baseUrl, driver);
 
-	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();   
-	
+	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame!!!!!
 	driver.switchTo().frame(0);
     driver.findElement(By.linkText("Options")).click();
@@ -39,7 +39,7 @@ public class Trunk_test3_tuftsNow {
     driver.findElement(By.id("menu-965")).click();
     driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
-    driver.findElement(By.id("edit-keys")).sendKeys("what is this");
+    driver.findElement(By.id("edit-keys")).sendKeys(params.get_search_text());
     driver.findElement(By.id("edit-submit")).click();
   }
 

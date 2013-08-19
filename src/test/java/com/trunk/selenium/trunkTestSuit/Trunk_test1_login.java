@@ -16,12 +16,13 @@ public class Trunk_test1_login {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-  Help_login login_key = new Help_login();
+  private Help_login login_key = new Help_login();
+  private Help_params params = new Help_params();
   
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://trunk-stage.tufts.edu/";
+    baseUrl = params.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -29,9 +30,6 @@ public class Trunk_test1_login {
   public void testTrunkTest1() throws Exception {
 	login_key.login(baseUrl, driver);
 
-
-
-    
     try {
       assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]")));
     } catch (Error e) {
@@ -87,27 +85,6 @@ public class Trunk_test1_login {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-    /*    // Warning: verifyTextPresent may require manual changes
-          //asseration error here!
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Communications[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Tools[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    // Warning: verifyTextPresent may require manual changes
-    try {
-      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Settings[\\s\\S]*$"));
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-*/
-    // Warning: verifyTextPresent may require manual changes
     try {
       assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Help[\\s\\S]*$"));
     } catch (Error e) {

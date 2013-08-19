@@ -14,12 +14,13 @@ public class Trunk_test4_communication {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-  Help_login login_key = new Help_login();
+  private Help_login login_key = new Help_login();
+  private Help_params params = new Help_params();
   
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://trunk-stage.tufts.edu/";
+    baseUrl = params.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -30,7 +31,6 @@ public class Trunk_test4_communication {
     driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();
     driver.switchTo().frame(0);
-    
     driver.findElement(By.linkText("Add")).click();
     driver.findElement(By.id("activitytitle")).clear();
     driver.findElement(By.id("activitytitle")).sendKeys("new event");
