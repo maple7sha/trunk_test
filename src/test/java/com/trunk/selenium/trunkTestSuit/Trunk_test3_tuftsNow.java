@@ -27,7 +27,7 @@ public class Trunk_test3_tuftsNow {
 
   @Test
   public void testTrunkTest3() throws Exception {
-	login_key.login(baseUrl, driver);
+	verificationErrors.append(login_key.login(baseUrl, driver));
 
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame!!!!!

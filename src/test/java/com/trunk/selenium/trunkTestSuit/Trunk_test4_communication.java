@@ -27,7 +27,7 @@ public class Trunk_test4_communication {
 
   @Test
   public void testTrunkTest4() throws Exception {
-	login_key.login(baseUrl, driver);
+	verificationErrors.append(login_key.login(baseUrl, driver));
 
     driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();

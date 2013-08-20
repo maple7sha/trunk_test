@@ -28,7 +28,7 @@ public class Trunk_test2_upload {
 
   @Test
   public void testTrunkTest2() throws Exception {
-	login_key.login(baseUrl, driver);
+	verificationErrors.append(login_key.login(baseUrl, driver));
 	/* To verify the presence of menu elements of the webpage */
     try {
       assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));

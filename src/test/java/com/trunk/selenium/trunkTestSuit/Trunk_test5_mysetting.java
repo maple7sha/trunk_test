@@ -28,7 +28,7 @@ public class Trunk_test5_mysetting {
 
   @Test
   public void testTrunkTest5() throws Exception {
-	login_key.login(baseUrl, driver);
+	verificationErrors.append(login_key.login(baseUrl, driver));
 
 	// go to profile tab and test
     driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
