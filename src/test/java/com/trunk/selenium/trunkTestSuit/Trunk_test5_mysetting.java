@@ -1,21 +1,23 @@
 package com.trunk.selenium.trunkTestSuit;
 
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.support.ui.Select;
 
 public class Trunk_test5_mysetting {
   private WebDriver driver;
   private String baseUrl;
-  private boolean acceptNextAlert = true;
+  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Help_login login_key = new Help_login();
+  private Help_logout logout_key = new Help_logout();
   private Help_params params = new Help_params();
+  private Help_verify verify_fun = new Help_verify();
   
   @Before
   public void setUp() throws Exception {
@@ -41,7 +43,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
     for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
-    	try { if (isElementPresent(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton"))) break; } catch (Exception e) {}
+    	try { if (verify_fun.isElementPresent(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton"), driver)) break; } catch (Exception e) {}
     	Thread.sleep(1000);
     }
 
@@ -70,7 +72,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
     driver.switchTo().defaultContent();
-    driver.findElement(By.linkText("Logout")).click();
+    verificationErrors.append(logout_key.logout(driver));
   }
 
   @After
@@ -79,39 +81,6 @@ public class Trunk_test5_mysetting {
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
-    }
-  }
-
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      driver.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
     }
   }
 }

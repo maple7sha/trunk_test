@@ -1,20 +1,21 @@
 package com.trunk.selenium.trunkTestSuit;
 
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Trunk_test3_tuftsNow {
   private WebDriver driver;
   private String baseUrl;
-  private boolean acceptNextAlert = true;
+  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Help_login login_key = new Help_login();
+  private Help_logout logout_key = new Help_logout();
   private Help_params params = new Help_params();
   
   @Before
@@ -41,6 +42,8 @@ public class Trunk_test3_tuftsNow {
     driver.findElement(By.id("edit-keys")).clear();
     driver.findElement(By.id("edit-keys")).sendKeys(params.get_search_text());
     driver.findElement(By.id("edit-submit")).click();
+    
+    verificationErrors.append(logout_key.logout(driver));
   }
 
   @After
@@ -49,39 +52,6 @@ public class Trunk_test3_tuftsNow {
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
-    }
-  }
-
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      driver.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
     }
   }
 }
