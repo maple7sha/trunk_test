@@ -42,7 +42,6 @@ public class Trunk_test3_tuftsNow {
     driver.findElement(By.id("edit-keys")).clear();
     driver.findElement(By.id("edit-keys")).sendKeys(params.get_search_text());
     driver.findElement(By.id("edit-submit")).click();
-    
     verificationErrors.append(logout_key.logout(driver));
   }
 

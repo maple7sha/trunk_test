@@ -66,19 +66,16 @@ public class Trunk_test2_upload {
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
     menu.click();              
-    // Thread.sleep(2000);
     upload.click();
-    
-    //((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('selectedItemId').value='/user/5005cc99-5e90-40d1-a623-2bf36885f5a9/';document.getElementById('rt_action').value='org.sakaiproject.content.types.fileUpload:create';document.getElementById('sakai_action').value='doDispatchAction';submitform('showForm');");        
+            
     driver.findElement(By.id("content_0")).sendKeys(params.get_sample_txt());
     driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys(params.get_uploadtxt_text());
     driver.findElement(By.id("newcopyright_0")).clear();
     driver.findElement(By.id("newcopyright_0")).sendKeys(params.get_cpright_text());
     driver.findElement(By.id("saveChanges")).click();
-    /* Delete all uploaded files */
+    // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
-    
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
     driver.switchTo().defaultContent();
