@@ -1,13 +1,13 @@
 package com.trunk.selenium.trunkTestSuit;
 
-//import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-//import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+//import java.util.regex.Pattern;
+//import static org.hamcrest.CoreMatchers.*;
 
 public class Trunk_test3_tuftsNow {
   private WebDriver driver;

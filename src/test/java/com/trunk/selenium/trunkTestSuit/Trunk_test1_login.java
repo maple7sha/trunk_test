@@ -1,12 +1,12 @@
 package com.trunk.selenium.trunkTestSuit;
 
 import java.io.PrintStream;
-//import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
+//import java.util.regex.Pattern;
+//import static org.hamcrest.CoreMatchers.*;
 //import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.support.ui.Select;
@@ -14,12 +14,12 @@ import org.openqa.selenium.*;
 public class Trunk_test1_login {
   private WebDriver driver;
   private String baseUrl;
-  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Help_login login_key = new Help_login();
   private Help_logout logout_key = new Help_logout();
   private Help_params params = new Help_params();
   //private Help_verify verify_fun = new Help_verify();
+  //private boolean acceptNextAlert = true;
   
   @Before
   public void setUp() throws Exception {

@@ -1,16 +1,16 @@
 package com.trunk.selenium.trunkTestSuit;
 
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 //import java.io.PrintStream;
 //import java.util.regex.Pattern;
 //import java.util.concurrent.TimeUnit;
 //import org.junit.*;
 //import static org.junit.Assert.*;
 //import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.*;
 //import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
+//import org.openqa.selenium.firefox.FirefoxBinary;
+//import org.openqa.selenium.firefox.FirefoxProfile;
 //import org.openqa.selenium.support.ui.Select;
 
 public class Help_params {
@@ -45,9 +45,10 @@ public class Help_params {
 		// driver = new FirefoxDriver();
 		/* attempts to run headless only, though this does not change anything on windows */
 		//String Xport = System.getProperty("display.props");
-		FirefoxBinary ffox = new FirefoxBinary();
-		FirefoxProfile ffp = new FirefoxProfile();
-		driver = new FirefoxDriver(ffox, ffp);
+		//FirefoxBinary ffox = new FirefoxBinary();
+		//FirefoxProfile ffp = new FirefoxProfile();
+		//driver = new FirefoxDriver(ffox, ffp);
+		driver = new FirefoxDriver();
 		return driver;
 	}
 }

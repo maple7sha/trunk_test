@@ -1,13 +1,13 @@
 package com.trunk.selenium.trunkTestSuit;
 
-//import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
+//import static org.hamcrest.CoreMatchers.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.support.ui.Select;
+//import java.util.regex.Pattern;
 
 public class Trunk_test5_mysetting {
   private WebDriver driver;
@@ -46,11 +46,9 @@ public class Trunk_test5_mysetting {
     	try { if (verify_fun.isElementPresent(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton"), driver)) break; } catch (Exception e) {}
     	Thread.sleep(1000);
     }
-
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton")).click();
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
-    
     driver.switchTo().defaultContent();  // change back to parent frame 
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
     driver.switchTo().frame(0);

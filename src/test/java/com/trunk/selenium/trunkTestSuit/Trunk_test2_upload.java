@@ -1,5 +1,5 @@
 package com.trunk.selenium.trunkTestSuit;
-//import java.util.regex.Pattern;
+
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.support.ui.Select;
+//import java.util.regex.Pattern;
 
 public class Trunk_test2_upload {
   private WebDriver driver;
