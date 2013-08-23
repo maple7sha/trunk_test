@@ -28,6 +28,7 @@ public class Trunk_test1_login {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
+  
   @Test
   public void testTrunkTest1() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
