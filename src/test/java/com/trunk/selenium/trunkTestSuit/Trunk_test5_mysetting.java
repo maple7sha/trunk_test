@@ -8,9 +8,10 @@ import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.support.ui.Select;
 //import java.util.regex.Pattern;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class Trunk_test5_mysetting {
-  private WebDriver driver;
+  private HtmlUnitDriver driver;
   private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();

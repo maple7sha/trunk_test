@@ -6,12 +6,12 @@ import static org.junit.Assert.*;
 //import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
 //import org.openqa.selenium.support.ui.Select;
 //import java.util.regex.Pattern;
 
-public class Trunk_test2_upload {
-  private WebDriver driver;
+public class Trunk_test2_upload {private HtmlUnitDriver driver;
   private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -67,7 +67,8 @@ public class Trunk_test2_upload {
     // have to click the menu after move to the right location!
     menu.click();              
     upload.click();
-            
+    
+    driver.switchTo().defaultContent();
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
     driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys(key.get_uploadtxt_text());

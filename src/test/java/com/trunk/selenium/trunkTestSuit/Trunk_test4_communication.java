@@ -4,13 +4,14 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 //import java.util.regex.Pattern;
 //import static org.hamcrest.CoreMatchers.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Trunk_test4_communication {
-  private WebDriver driver;
+  private HtmlUnitDriver driver;
   private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();

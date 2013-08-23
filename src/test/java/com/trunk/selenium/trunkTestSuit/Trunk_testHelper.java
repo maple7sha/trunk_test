@@ -1,11 +1,11 @@
 package com.trunk.selenium.trunkTestSuit;
 
 import static org.junit.Assert.assertTrue;
-
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.util.Scanner;
+import org.openqa.selenium.*;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+
 /*import java.io.PrintStream;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -209,14 +209,14 @@ public class Trunk_testHelper {
 			return "I am happy today";
 		}
 		
-		public WebDriver get_driver(WebDriver driver){
+		public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
 			// driver = new FirefoxDriver();
 			/* attempts to run headless only, though this does not change anything on windows */
 			//String Xport = System.getProperty("display.props");
 			//FirefoxBinary ffox = new FirefoxBinary();
 			//FirefoxProfile ffp = new FirefoxProfile();
 			//driver = new FirefoxDriver(ffox, ffp);
-			driver = new FirefoxDriver();
+			driver = new HtmlUnitDriver();
 			return driver;
 		}
 	  /* **** END OF params func **** */

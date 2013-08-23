@@ -3,6 +3,8 @@ package com.trunk.selenium.trunkTestSuit;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
+
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +12,7 @@ import org.openqa.selenium.*;
 //import static org.hamcrest.CoreMatchers.*;
 
 public class Trunk_test3_tuftsNow {
-  private WebDriver driver;
+  private HtmlUnitDriver driver;
   private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -20,7 +22,7 @@ public class Trunk_test3_tuftsNow {
   
   @Before
   public void setUp() throws Exception {
-	  driver = key.get_driver(driver);
+	driver = key.get_driver(driver);
     baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
