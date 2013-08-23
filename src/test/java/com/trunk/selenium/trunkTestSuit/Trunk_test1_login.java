@@ -15,23 +15,23 @@ public class Trunk_test1_login {
   private WebDriver driver;
   private String baseUrl;
   private StringBuffer verificationErrors = new StringBuffer();
-  private Help_login login_key = new Help_login();
-  private Help_logout logout_key = new Help_logout();
-  private Help_params params = new Help_params();
+  private Trunk_testHelper key = new Trunk_testHelper();
+  //private Test_helper logout_key = new Test_helper();
+  //private Help_params params = new Help_params();
   //private Help_verify verify_fun = new Help_verify();
   //private boolean acceptNextAlert = true;
   
   @Before
   public void setUp() throws Exception {
-	driver = params.get_driver(driver);
-    baseUrl = params.get_baseUrl();
+	driver = key.get_driver(driver);
+    baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testTrunkTest1() throws Exception {
-	verificationErrors.append(login_key.login(baseUrl, driver));
-    verificationErrors.append(logout_key.logout(driver));
+	verificationErrors.append(key.login(baseUrl, driver));
+    verificationErrors.append(key.logout(driver));
   }
 
   @After

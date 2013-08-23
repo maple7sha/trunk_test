@@ -15,44 +15,44 @@ public class Trunk_test2_upload {
   private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
-  private Help_login login_key = new Help_login();
-  private Help_logout logout_key = new Help_logout();
-  private Help_params params = new Help_params();
-  private Help_verify verify_fun = new Help_verify();
+  private Trunk_testHelper key = new Trunk_testHelper();
+  //private Test_helper logout_key = new Test_helper();
+  //private Help_params params = new Help_params();
+  //private Help_verify verify_fun = new Help_verify();
   
   @Before
   public void setUp() throws Exception {
-	driver = params.get_driver(driver);
-    baseUrl = params.get_baseUrl();
+	driver = key.get_driver(driver);
+    baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testTrunkTest2() throws Exception {
-	verificationErrors.append(login_key.login(baseUrl, driver));
+	verificationErrors.append(key.login(baseUrl, driver));
 	/* To verify the presence of menu elements of the webpage */
     try {
-      assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
+      assertTrue(key.isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
     try {
-      assertTrue(verify_fun.isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
+      assertTrue(key.isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
     try {
-      assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"toolMenu\"]"), driver));
+      assertTrue(key.isElementPresent(By.xpath("//div[@id=\"toolMenu\"]"), driver));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
     try {
-      assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
+      assertTrue(key.isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
     try {
-      assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
+      assertTrue(key.isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
@@ -68,18 +68,18 @@ public class Trunk_test2_upload {
     menu.click();              
     upload.click();
             
-    driver.findElement(By.id("content_0")).sendKeys(params.get_sample_txt());
+    driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
     driver.findElement(By.id("description_0")).clear();
-    driver.findElement(By.id("description_0")).sendKeys(params.get_uploadtxt_text());
+    driver.findElement(By.id("description_0")).sendKeys(key.get_uploadtxt_text());
     driver.findElement(By.id("newcopyright_0")).clear();
-    driver.findElement(By.id("newcopyright_0")).sendKeys(params.get_cpright_text());
+    driver.findElement(By.id("newcopyright_0")).sendKeys(key.get_cpright_text());
     driver.findElement(By.id("saveChanges")).click();
     // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
     driver.switchTo().defaultContent();
-    verificationErrors.append(logout_key.logout(driver));
+    verificationErrors.append(key.logout(driver));
   }
 
   @After

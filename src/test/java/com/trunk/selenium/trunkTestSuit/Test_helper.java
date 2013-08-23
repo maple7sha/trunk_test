@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 /* Logout and breakdown the whole code? */
 
-public class Help_logout {
+public class Test_helper {
 	private Help_verify verify_fun = new Help_verify();
 	
 	public String logout(WebDriver driver) {
@@ -25,4 +25,8 @@ public class Help_logout {
 		}
 		return str;
 	}
+	
+	
+	
+	
 }

@@ -3,6 +3,7 @@ package com.trunk.selenium.trunkTestSuit;
 import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Scanner;
 /*import java.io.PrintStream;
@@ -15,7 +16,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select; */
 
 
-public class Help_login {
+public class Trunk_testHelper {
+	
+	/* **** START OF LOGIN **** */
 	Scanner in = new Scanner(System.in); 
 	private Help_verify verify_fun = new Help_verify();
 	
@@ -42,7 +45,6 @@ public class Help_login {
 	    driver.findElement(By.id("pw")).clear();
 	    driver.findElement(By.id("pw")).sendKeys("wrong password");
 	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-	    
 	    
 	    // re-login
 	    Thread.sleep(500);
@@ -123,4 +125,100 @@ public class Help_login {
 		
 		return "nawoah";
 	}
+	/* **** END OF LOGIN **** */
+	
+	/* **** START OF LOGOUT **** */
+	public String logout(WebDriver driver) {
+		driver.switchTo().defaultContent();
+		driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
+		
+		driver.switchTo().frame(0);
+		String str = "";
+		try {
+		      assertTrue(verify_fun.isElementPresent(By.id("logo"), driver));
+		      assertTrue(verify_fun.isElementPresent(By.id("welcome"), driver));
+		      assertTrue(verify_fun.isElementPresent(By.id("middle_col"), driver));
+		      assertTrue(verify_fun.isElementPresent(By.id("right_col"), driver));
+		} catch (Error e) {
+		      str = e.toString();
+		}
+		return str;
+	}
+	/* **** END OF LOGOUT **** */
+	
+	/* **** START OF verification func **** */
+	public boolean isElementPresent(By by, WebDriver driver) {
+	    try {
+	      driver.findElement(by);
+	      return true;
+	    } catch (NoSuchElementException e) {
+	      return false;
+	    }
+	  }
+
+	  public boolean isAlertPresent(WebDriver driver) {
+	    try {
+	      driver.switchTo().alert();
+	      return true;
+	    } catch (NoAlertPresentException e) {
+	      return false;
+	    }
+	  }
+
+	  public String closeAlertAndGetItsText(boolean acceptNextAlert, WebDriver driver) {
+	    try {
+	      Alert alert = driver.switchTo().alert();
+	      String alertText = alert.getText();
+	      if (acceptNextAlert) {
+	        alert.accept();
+	      } else {
+	        alert.dismiss();
+	      }
+	      return alertText;
+	    } finally {
+	      acceptNextAlert = true;
+	    }
+	  }
+	  /* **** END OF verification func **** */
+	  
+	  /* **** START OF params func **** */
+		public String get_sample_txt(){
+			return "C:\\Users\\VEK\\Desktop\\sample.txt";
+		}
+		
+		public String get_sample_jpg(){
+			return "C:\\Users\\VEK\\Desktop\\sample.jpg";
+		}
+		
+		public String get_baseUrl(){
+			return "https://trunk-stage.tufts.edu/";
+		}
+		public String get_uploadtxt_text(){
+			return "this is to upload a .txt file";
+		}
+		
+		public String get_cpright_text(){
+			return "copyright owned by the file producers";
+		}
+		
+		public String get_search_text(){
+			return "news";
+		}
+		
+		public String get_saysth_text(){
+			return "I am happy today";
+		}
+		
+		public WebDriver get_driver(WebDriver driver){
+			// driver = new FirefoxDriver();
+			/* attempts to run headless only, though this does not change anything on windows */
+			//String Xport = System.getProperty("display.props");
+			//FirefoxBinary ffox = new FirefoxBinary();
+			//FirefoxProfile ffp = new FirefoxProfile();
+			//driver = new FirefoxDriver(ffox, ffp);
+			driver = new FirefoxDriver();
+			return driver;
+		}
+	  /* **** END OF params func **** */
+	
 }
