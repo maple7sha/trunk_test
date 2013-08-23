@@ -20,7 +20,7 @@ public class Trunk_testHelper {
 	
 	/* **** START OF LOGIN **** */
 	Scanner in = new Scanner(System.in); 
-	private Help_verify verify_fun = new Help_verify();
+	//private Help_verify verify_fun = new Help_verify();
 	
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException{
 		/* lesson learned: must know to switch to the frame!!
@@ -31,10 +31,10 @@ public class Trunk_testHelper {
 	    // verify home page info
 	    String str = "";
 		try {
-		      assertTrue(verify_fun.isElementPresent(By.id("logo"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("welcome"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("middle_col"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("right_col"), driver));
+		      assertTrue(isElementPresent(By.id("logo"), driver));
+		      assertTrue(isElementPresent(By.id("welcome"), driver));
+		      assertTrue(isElementPresent(By.id("middle_col"), driver));
+		      assertTrue(isElementPresent(By.id("right_col"), driver));
 		} catch (Error e) {
 		      str = e.toString();
 		}
@@ -54,27 +54,27 @@ public class Trunk_testHelper {
 	    
 	    // verify all elements in the home page
 	    try {
-	        assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
 	      } catch (Error e) {
 	        str += e.toString();
 	      }
 	      try {
-	        assertTrue(verify_fun.isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
 	      } catch (Error e) {
 	    	str += e.toString();
 	      }
 	      try {
-	        assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"toolMenu\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//div[@id=\"toolMenu\"]"), driver));
 	      } catch (Error e) {
 	    	str += e.toString();
 	      }
 	      try {
-	        assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
 	      } catch (Error e) {
 	    	str += e.toString();
 	      }
 	      try {
-	        assertTrue(verify_fun.isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
 	      } catch (Error e) {
 	    	str += e.toString();
 	      }
@@ -135,10 +135,10 @@ public class Trunk_testHelper {
 		driver.switchTo().frame(0);
 		String str = "";
 		try {
-		      assertTrue(verify_fun.isElementPresent(By.id("logo"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("welcome"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("middle_col"), driver));
-		      assertTrue(verify_fun.isElementPresent(By.id("right_col"), driver));
+		      assertTrue(isElementPresent(By.id("logo"), driver));
+		      assertTrue(isElementPresent(By.id("welcome"), driver));
+		      assertTrue(isElementPresent(By.id("middle_col"), driver));
+		      assertTrue(isElementPresent(By.id("right_col"), driver));
 		} catch (Error e) {
 		      str = e.toString();
 		}
