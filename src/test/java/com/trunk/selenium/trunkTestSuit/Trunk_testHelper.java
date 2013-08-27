@@ -3,6 +3,9 @@ package com.trunk.selenium.trunkTestSuit;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -23,6 +26,10 @@ public class Trunk_testHelper {
 	//private Help_verify verify_fun = new Help_verify();
 	
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException{
+		// suppressing all html warning messages
+		Logger logger = Logger.getLogger ("");
+		logger.setLevel (Level.OFF);
+		
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
 	    driver.get(baseUrl + "/xsl-portal");

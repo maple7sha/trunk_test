@@ -1,15 +1,21 @@
 package com.trunk.selenium.trunkTestSuit;
 
 import java.util.concurrent.TimeUnit;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+
+//import org.apache.commons.logging.LogFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import java.util.regex.Pattern;
 //import static org.hamcrest.CoreMatchers.*;
+
+//import com.gargoylesoftware.htmlunit.BrowserVersion;
 
 public class Trunk_test3_tuftsNow {
   private HtmlUnitDriver driver;
@@ -29,6 +35,9 @@ public class Trunk_test3_tuftsNow {
 
   @Test
   public void testTrunkTest3() throws Exception {
+	  
+
+	    
 	verificationErrors.append(key.login(baseUrl, driver));
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame!!!!!
