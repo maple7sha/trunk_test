@@ -75,7 +75,6 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     driver.findElement(By.id("newcopyright_0")).sendKeys(key.get_cpright_text());
     driver.findElement(By.id("saveChanges")).click();
     
-    
     // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");

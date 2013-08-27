@@ -2,7 +2,11 @@ package com.trunk.selenium.trunkTestSuit;
 
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,12 +27,15 @@ public class Trunk_testHelper {
 	
 	/* **** START OF LOGIN **** */
 	Scanner in = new Scanner(System.in); 
+	//private Logger logger = Logger.getLogger ("");
 	//private Help_verify verify_fun = new Help_verify();
 	
-	public String login(String baseUrl, WebDriver driver) throws InterruptedException{
-		// suppressing all html warning messages
-		Logger logger = Logger.getLogger ("");
-		logger.setLevel (Level.OFF);
+	public String login(String baseUrl, WebDriver driver) throws InterruptedException, Exception, IOException{
+		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
+		// Handler handler = new FileHandler("testLog.log");
+		// Logger.getLogger("").addHandler(handler);  // static access 
+		Logger.getLogger("").setLevel(Level.OFF);
+		
 		
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
@@ -149,6 +156,8 @@ public class Trunk_testHelper {
 		} catch (Error e) {
 		      str = e.toString();
 		}
+		
+
 		return str;
 	}
 	/* **** END OF LOGOUT **** */
