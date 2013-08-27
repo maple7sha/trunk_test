@@ -30,19 +30,32 @@ public class Trunk_test3_tuftsNow {
   @Test
   public void testTrunkTest3() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame!!!!!
+	
 	driver.switchTo().frame(0);
-    driver.findElement(By.linkText("Options")).click();
-    driver.findElement(By.name("eventSubmit_doConfigure_update")).click();
-    driver.switchTo().frame(0);
-    driver.switchTo().frame(driver.findElement(By.id("wciframe")));
+	driver.switchTo().frame(driver.findElement(By.id("wciframe")));
     driver.findElement(By.id("menu-965")).click();
     driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
     driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
     driver.findElement(By.id("edit-submit")).click();
+    
+    //driver.switchTo().defaultContent();
+    //driver.switchTo().frame(0);
+    //driver.findElement(By.linkText("Options")).click();
+    // Thread.sleep(3000);  // wait 500ms to ensure proper loading before proceeding to next check
+    // driver.switchTo().frame(driver.findElement(By.id("Main92aad4ecx6d34x48c1x956fx03ce02da9145")));
+    // (By.xpath("(//li[contains(text(), 'Add')])")	
+    //new Select(driver.findElement(By.id("height"))).selectByVisibleText("750 pixels");
+    //driver.findElement(By.name("eventSubmit_doConfigure_update")).click();
+    // driver.switchTo().frame(0);
+    // driver.switchTo().frame(driver.findElement(By.id("wciframe")));
+	//driver.switchTo().frame(0);
+    //driver.findElement(By.linkText("Options")).click();
+    //driver.findElement(By.name("eventSubmit_doConfigure_update")).click();
+    
+    
     verificationErrors.append(key.logout(driver));
   }
 
