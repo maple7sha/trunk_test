@@ -45,7 +45,7 @@ public class Trunk_testHelper {
 	    driver.findElement(By.id("pw")).clear();
 	    driver.findElement(By.id("pw")).sendKeys("wrong password");
 	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-	    
+	
 	    // re-login
 	    Thread.sleep(500);
 	    driver.findElement(By.id("eid")).sendKeys(getUname());
@@ -155,17 +155,17 @@ public class Trunk_testHelper {
 	      return false;
 	    }
 	  }
-
-	  public boolean isAlertPresent(WebDriver driver) {
-	    try {
-	      driver.switchTo().alert();
+	
+	public boolean isAlertPresent(WebDriver driver) {
+		try {
+		  driver.switchTo().alert();
 	      return true;
 	    } catch (NoAlertPresentException e) {
 	      return false;
 	    }
-	  }
+	}
 
-	  public String closeAlertAndGetItsText(boolean acceptNextAlert, WebDriver driver) {
+	public String closeAlertAndGetItsText(boolean acceptNextAlert, WebDriver driver) {
 	    try {
 	      Alert alert = driver.switchTo().alert();
 	      String alertText = alert.getText();
@@ -178,47 +178,48 @@ public class Trunk_testHelper {
 	    } finally {
 	      acceptNextAlert = true;
 	    }
-	  }
-	  /* **** END OF verification func **** */
+	}
+	/* **** END OF verification func **** */
 	  
-	  /* **** START OF params func **** */
-		public String get_sample_txt(){
-			return "C:\\Users\\VEK\\Desktop\\sample.txt";
-		}
+	/* **** START OF params func **** */
+	public String get_sample_txt(){
+		return "C:\\Users\\VEK\\Desktop\\sample.txt";
+	}
 		
-		public String get_sample_jpg(){
-			return "C:\\Users\\VEK\\Desktop\\sample.jpg";
-		}
+	public String get_sample_jpg(){
+		return "C:\\Users\\VEK\\Desktop\\sample.jpg";
+	}
 		
-		public String get_baseUrl(){
-			return "https://trunk-stage.tufts.edu/";
-		}
-		public String get_uploadtxt_text(){
-			return "this is to upload a .txt file";
-		}
-		
-		public String get_cpright_text(){
-			return "copyright owned by the file producers";
-		}
-		
-		public String get_search_text(){
-			return "news";
-		}
-		
-		public String get_saysth_text(){
-			return "I am happy today";
-		}
-		
-		public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
-			// driver = new FirefoxDriver();
-			/* attempts to run headless only, though this does not change anything on windows */
-			//String Xport = System.getProperty("display.props");
-			//FirefoxBinary ffox = new FirefoxBinary();
-			//FirefoxProfile ffp = new FirefoxProfile();
-			//driver = new FirefoxDriver(ffox, ffp);
-			driver = new HtmlUnitDriver();
-			return driver;
-		}
-	  /* **** END OF params func **** */
+	public String get_baseUrl(){
+		return "https://trunk-stage.tufts.edu/";
+	}
 	
+	public String get_uploadtxt_text(){
+		return "this is to upload a .txt file";
+	}
+		
+	public String get_cpright_text(){
+		return "copyright owned by the file producers";
+	}
+		
+	public String get_search_text(){
+		return "news";
+	}
+		
+	public String get_saysth_text(){
+		return "I am happy today";
+	}
+		
+	public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
+		/* attempts to run headless only, though this does not change anything on windows */
+		// driver = new FirefoxDriver();
+		// String Xport = System.getProperty("display.props");
+		// FirefoxBinary ffox = new FirefoxBinary();
+		// FirefoxProfile ffp = new FirefoxProfile();
+		// driver = new FirefoxDriver(ffox, ffp);
+		driver = new HtmlUnitDriver();
+		driver.setJavascriptEnabled(true);  // this must be enabled to allow test2 upload selector to work
+		return driver;
+	}
+	/* **** END OF params func **** */
 }

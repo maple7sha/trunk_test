@@ -68,13 +68,14 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     menu.click();              
     upload.click();
     
-    driver.switchTo().defaultContent();
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
     driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys(key.get_uploadtxt_text());
     driver.findElement(By.id("newcopyright_0")).clear();
     driver.findElement(By.id("newcopyright_0")).sendKeys(key.get_cpright_text());
     driver.findElement(By.id("saveChanges")).click();
+    
+    
     // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
@@ -96,7 +97,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
 
 
 // following code can be added to enrich the test cases
-/**
+/* *
 driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();
 driver.findElement(By.linkText("Duplicate")).click();
 driver.findElement(By.cssSelector("#9994 > img.dropdn")).click();
@@ -131,4 +132,4 @@ driver.findElement(By.xpath("(//a[contains(text(),'Remove')])[2]")).click();
 driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
 driver.findElement(By.xpath("(//a[contains(text(),'Remove')])[2]")).click();
 driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
-**/
+* */
