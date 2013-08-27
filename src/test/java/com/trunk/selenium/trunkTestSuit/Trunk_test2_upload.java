@@ -3,22 +3,15 @@ package com.trunk.selenium.trunkTestSuit;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
-//import org.openqa.selenium.support.ui.Select;
-//import java.util.regex.Pattern;
+
 
 public class Trunk_test2_upload {private HtmlUnitDriver driver;
   private String baseUrl;
-  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Trunk_testHelper key = new Trunk_testHelper();
-  //private Test_helper logout_key = new Test_helper();
-  //private Help_params params = new Help_params();
-  //private Help_verify verify_fun = new Help_verify();
   
   @Before
   public void setUp() throws Exception {
@@ -94,41 +87,3 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
   }
 }
 
-
-// following code can be added to enrich the test cases
-/* *
-driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();
-driver.findElement(By.linkText("Duplicate")).click();
-driver.findElement(By.cssSelector("#9994 > img.dropdn")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Move')])[3]")).click();
-driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();
-driver.findElement(By.cssSelector("#9996 > img.dropdn")).click();
-driver.findElement(By.id("bottompadding")).click();
-driver.findElement(By.id("list3")).click();
-driver.findElement(By.id("move-button")).click();
-driver.findElement(By.id("list2")).click();
-driver.findElement(By.id("copy-button")).click();
-driver.findElement(By.id("menu-9998")).click();
-driver.findElement(By.cssSelector("#9998 > img.dropdn")).click();
-driver.findElement(By.xpath("//form[@id='showForm']/table/tbody/tr[2]/td[6]/ul")).click();
-driver.findElement(By.cssSelector("#9998 > img.dropdn")).click();
-driver.findElement(By.linkText("Reorder")).click();
-driver.findElement(By.id("save")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Edit Details')])[3]")).click();
-driver.findElement(By.id("description_0")).clear();
-driver.findElement(By.id("description_0")).sendKeys("this is a sample upload---detail edited");
-driver.findElement(By.id("changeMimetype_0")).click();
-new Select(driver.findElement(By.id("mime_category_0"))).selectByVisibleText("graphics");
-new Select(driver.findElement(By.id("mime_category_0"))).selectByVisibleText("audio");
-new Select(driver.findElement(By.id("mime_subtype_0"))).selectByVisibleText("mp3");
-driver.findElement(By.id("finish_button")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Upload New Version')])[2]")).click();
-driver.findElement(By.id("content")).clear();
-driver.findElement(By.id("content")).sendKeys("C:\\sample.txt");
-driver.findElement(By.id("saveChanges")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Move')])[3]")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Remove')])[2]")).click();
-driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
-driver.findElement(By.xpath("(//a[contains(text(),'Remove')])[2]")).click();
-driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
-* */

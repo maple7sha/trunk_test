@@ -2,40 +2,25 @@ package com.trunk.selenium.trunkTestSuit;
 
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.openqa.selenium.*;
-//import org.openqa.selenium.firefox.FirefoxDriver;
-
-/*import java.io.PrintStream;
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select; */
-
+//import java.util.logging.FileHandler;
+//import java.util.logging.Handler;
 
 public class Trunk_testHelper {
 	
-	/* **** START OF LOGIN **** */
+/* ++++ START OF LOGIN ++++ */
 	Scanner in = new Scanner(System.in); 
 	//private Logger logger = Logger.getLogger ("");
-	//private Help_verify verify_fun = new Help_verify();
-	
+	//private Help_verify verify_fun = new Help_verify();	
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException, Exception, IOException{
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
 		// Logger.getLogger("").addHandler(handler);  // static access 
 		Logger.getLogger("").setLevel(Level.OFF);
-		
 		
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
@@ -139,9 +124,11 @@ public class Trunk_testHelper {
 		
 		return "nawoah";
 	}
-	/* **** END OF LOGIN **** */
+/* ---- END OF LOGIN ---- */
 	
-	/* **** START OF LOGOUT **** */
+	
+	
+/* ++++ START OF LOGOUT ++++ */
 	public String logout(WebDriver driver) {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
@@ -160,9 +147,11 @@ public class Trunk_testHelper {
 
 		return str;
 	}
-	/* **** END OF LOGOUT **** */
+/* ---- END OF LOGOUT ---- */
 	
-	/* **** START OF verification func **** */
+	
+	
+/* ++++ START OF verification func ++++ */
 	public boolean isElementPresent(By by, WebDriver driver) {
 	    try {
 	      driver.findElement(by);
@@ -195,9 +184,11 @@ public class Trunk_testHelper {
 	      acceptNextAlert = true;
 	    }
 	}
-	/* **** END OF verification func **** */
+/* ---- END OF verification func ---- */
 	  
-	/* **** START OF params func **** */
+	
+	
+/* ++++ START OF params func ++++ */
 	public String get_sample_txt(){
 		return "C:\\Users\\VEK\\Desktop\\sample.txt";
 	}
@@ -227,15 +218,10 @@ public class Trunk_testHelper {
 	}
 		
 	public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
-		/* attempts to run headless only, though this does not change anything on windows */
-		// driver = new FirefoxDriver();
-		// String Xport = System.getProperty("display.props");
-		// FirefoxBinary ffox = new FirefoxBinary();
-		// FirefoxProfile ffp = new FirefoxProfile();
-		// driver = new FirefoxDriver(ffox, ffp);
 		driver = new HtmlUnitDriver();
-		driver.setJavascriptEnabled(true);  // this must be enabled to allow test2 upload selector to work
+		// JS must be enabled to allow test2 upload selector to work
+		driver.setJavascriptEnabled(true);  
 		return driver;
 	}
-	/* **** END OF params func **** */
+/* ---- END OF params func ---- */
 }

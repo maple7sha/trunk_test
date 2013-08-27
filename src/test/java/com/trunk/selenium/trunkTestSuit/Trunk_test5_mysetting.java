@@ -13,12 +13,8 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class Trunk_test5_mysetting {
   private HtmlUnitDriver driver;
   private String baseUrl;
-  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Trunk_testHelper key = new Trunk_testHelper();
-  //private Test_helper logout_key = new Test_helper();
-  //private Help_params params = new Help_params();
-  //private Help_verify verify_fun = new Help_verify();
   
   @Before
   public void setUp() throws Exception {

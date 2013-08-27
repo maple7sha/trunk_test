@@ -6,18 +6,12 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
-//import java.util.regex.Pattern;
-//import static org.hamcrest.CoreMatchers.*;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Trunk_test4_communication {
   private HtmlUnitDriver driver;
   private String baseUrl;
-  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private Trunk_testHelper key = new Trunk_testHelper();
-  //private Test_helper logout_key = new Test_helper();
-  //private Help_params params = new Help_params();
   
   @Before
   public void setUp() throws Exception {
