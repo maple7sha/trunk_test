@@ -21,6 +21,8 @@ public class Trunk_test1_login {
 
   @Test
   public void testTrunkTest1() throws Exception {
+	System.out.print(System.getProperty("testvar"));
+	System.exit(0);
 	verificationErrors.append(key.login(baseUrl, driver));
     verificationErrors.append(key.logout(driver));
   }
