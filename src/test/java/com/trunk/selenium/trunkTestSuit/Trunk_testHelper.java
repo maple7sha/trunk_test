@@ -11,11 +11,8 @@ import org.openqa.selenium.*;
 //import java.util.logging.Handler;
 
 public class Trunk_testHelper {
-	
 /* ++++ START OF LOGIN ++++ */
 	Scanner in = new Scanner(System.in); 
-	//private Logger logger = Logger.getLogger ("");
-	//private Help_verify verify_fun = new Help_verify();	
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException, Exception, IOException{
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
@@ -224,4 +221,6 @@ public class Trunk_testHelper {
 		return driver;
 	}
 /* ---- END OF params func ---- */
+	
+	
 }
