@@ -22,7 +22,8 @@ public class Trunk_test1_login {
   @Test
   public void testTrunkTest1() throws Exception {
 	System.out.print("start of the test \n");
-	System.out.print(System.getProperty("testvar"));
+	System.out.print(System.getProperty("user.supp"));
+	System.out.print(System.getProperty("user.name"));
 	System.out.print("end of the test \n");
 	System.getProperties().list(System.out);
 	System.exit(0);
