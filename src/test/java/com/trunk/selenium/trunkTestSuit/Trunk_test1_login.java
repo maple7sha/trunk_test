@@ -23,7 +23,7 @@ public class Trunk_test1_login {
   public void testTrunkTest1() throws Exception {
 	System.out.print("start of the test \n");
 	System.out.print(System.getProperty("user.name"));
-	System.out.print(System.getProperty("param"));
+	//System.out.print(System.getProperty("param"));
 	System.out.print("\n --end of the test \n");
 	System.exit(0);
 	
