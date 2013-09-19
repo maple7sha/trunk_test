@@ -20,16 +20,7 @@ public class Trunk_test1_login {
   }
 
   @Test
-  public void testTrunkTest1() throws Exception {
-	System.out.print("start of the test \n");
-	System.out.print(System.getProperty("sakaiHostName"));
-	System.out.print(System.getProperty("sakaiHostUsername"));
-	System.out.print(System.getProperty("sakaiHostPassword"));
-	//System.out.print(System.getProperty("param"));
-	System.out.print("\n --end of the test \n");
-	System.exit(0);
-	
-	
+  public void testTrunkTest1() throws Exception {	
 	verificationErrors.append(key.login(baseUrl, driver));
     verificationErrors.append(key.logout(driver));
   }

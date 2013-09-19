@@ -112,14 +112,20 @@ public class Trunk_testHelper {
 	private String getUname(){
 		//System.out.println("Enter Username");
 		//String Uname = in.nextLine();
-		
-		return "@haowan";
+		String uname = System.getProperty("sakaiHostUsername");
+		if(uname==null) {
+			System.err.print("sakaiHostUsername not properly passed in");
+			System.exit(1);
+		}
+		return uname;
 	}	
 	private String getPword(){
-		//System.out.println("Enter Password");
-		//String Pword = in.nextLine();
-		
-		return "nawoah";
+		String pword = System.getProperty("sakaiHostPassword");
+		if(pword==null) {
+			System.err.print("sakaiHostPassword not properly passed in");
+			System.exit(1);
+		}
+		return pword;
 	}
 /* ---- END OF LOGIN ---- */
 	
@@ -187,15 +193,32 @@ public class Trunk_testHelper {
 	
 /* ++++ START OF params func ++++ */
 	public String get_sample_txt(){
-		return "C:\\Users\\VEK\\Desktop\\sample.txt";
+		
+		String txtaddr = System.getProperty("sampletxt_addr");
+		if(txtaddr==null) {
+			System.err.print("Username not properly passed in");
+			System.exit(1);
+		}
+		return txtaddr;
 	}
 		
 	public String get_sample_jpg(){
-		return "C:\\Users\\VEK\\Desktop\\sample.jpg";
+		String jpgaddr = System.getProperty("samplejpg_addr");
+		if(jpgaddr==null) {
+			System.err.print("Username not properly passed in");
+			System.exit(1);
+		}
+		return jpgaddr;
 	}
 		
 	public String get_baseUrl(){
-		return "https://trunk-stage.tufts.edu/";
+		
+		String baseUrl = System.getProperty("sakaiHostName");
+		if(baseUrl==null) {
+			System.err.print("sakaiHostName not properly passed in");
+			System.exit(1);
+		}
+		return baseUrl;
 	}
 	
 	public String get_uploadtxt_text(){
