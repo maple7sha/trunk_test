@@ -60,7 +60,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     // have to click the menu after move to the right location!
     menu.click();              
     upload.click();
-    
+    // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
     driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys(key.get_uploadtxt_text());

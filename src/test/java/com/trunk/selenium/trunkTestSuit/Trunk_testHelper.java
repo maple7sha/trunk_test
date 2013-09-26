@@ -199,6 +199,10 @@ public class Trunk_testHelper {
 			System.err.print("Username not properly passed in");
 			System.exit(1);
 		}
+		else if(!txtaddr.endsWith(".txt")){
+			System.err.print("Wrong type of file is uploaded; TXT file expected");
+			System.exit(1);
+		}
 		return txtaddr;
 	}
 		
@@ -206,6 +210,11 @@ public class Trunk_testHelper {
 		String jpgaddr = System.getProperty("samplejpg_addr");
 		if(jpgaddr==null) {
 			System.err.print("Username not properly passed in");
+			System.exit(1);
+		}
+		// Requirement for the type of images of files to be uploaded: jpg, png, gif, tif
+		else if(!(jpgaddr.endsWith(".jpg")||jpgaddr.endsWith(".png")||jpgaddr.endsWith(".gif")||jpgaddr.endsWith(".tif"))){
+			System.err.print("Wrong type of file is uploaded; image file expected");
 			System.exit(1);
 		}
 		return jpgaddr;
@@ -244,6 +253,4 @@ public class Trunk_testHelper {
 		return driver;
 	}
 /* ---- END OF params func ---- */
-	
-	
 }
