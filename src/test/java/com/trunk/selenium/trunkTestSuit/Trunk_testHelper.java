@@ -25,12 +25,10 @@ public class Trunk_testHelper {
 		driver.get(baseUrl + "favicon.ico");
 	    String str = "";
 		try {
-		      assertTrue(isElementPresent(By.xpath("(//img)"), driver));
+		      assertTrue(isElementPresent(By.xpath("(//img[@src='https://trunk-stage.tufts.edu/favicon.ico'])"), driver));
 		} catch (Error e) {
 		      str = e.toString();
 		}
-	    
-	    
 	    
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
