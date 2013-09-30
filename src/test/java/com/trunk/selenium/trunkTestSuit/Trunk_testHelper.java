@@ -20,7 +20,7 @@ public class Trunk_testHelper {
 		// Logger.getLogger("").addHandler(handler);  // static access 
 		Logger.getLogger("").setLevel(Level.OFF);
 		
-		/* verify favicon */
+		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "favicon.ico");
 	    String str = "";
