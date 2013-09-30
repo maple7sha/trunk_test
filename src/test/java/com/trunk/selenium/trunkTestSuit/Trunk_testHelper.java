@@ -23,7 +23,6 @@ public class Trunk_testHelper {
 		/* verify favicon */
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "favicon.ico");
-	    driver.switchTo().frame(0);
 	    String str = "";
 		try {
 		      assertTrue(isElementPresent(By.xpath("(//img)"), driver));
