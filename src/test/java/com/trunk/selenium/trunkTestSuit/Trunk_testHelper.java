@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.openqa.selenium.*;
@@ -19,13 +20,25 @@ public class Trunk_testHelper {
 		// Logger.getLogger("").addHandler(handler);  // static access 
 		Logger.getLogger("").setLevel(Level.OFF);
 		
+		/* verify favicon */
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(baseUrl + "favicon.ico");
+	    driver.switchTo().frame(0);
+	    String str = "";
+		try {
+		      assertTrue(isElementPresent(By.xpath("(//img)"), driver));
+		} catch (Error e) {
+		      str = e.toString();
+		}
+	    
+	    
+	    
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
 	    driver.get(baseUrl + "/xsl-portal");
 	    driver.switchTo().frame(0);
 	    
 	    // verify home page info
-	    String str = "";
 		try {
 		      assertTrue(isElementPresent(By.id("logo"), driver));
 		      assertTrue(isElementPresent(By.id("welcome"), driver));
