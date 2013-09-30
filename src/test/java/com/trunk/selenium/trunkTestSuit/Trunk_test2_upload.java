@@ -80,6 +80,14 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
     driver.switchTo().defaultContent();
+    
+    // verify the files are deleted
+    try {
+        assertFalse(key.isElementPresent(By.xpath("//a[contains(text(), 'sample.txt')]"), driver));
+    } catch (Error e) {
+        verificationErrors.append(e.toString());
+    }
+    
     verificationErrors.append(key.logout(driver));
   }
 
