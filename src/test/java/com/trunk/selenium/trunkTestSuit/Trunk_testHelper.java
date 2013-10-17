@@ -22,8 +22,8 @@ public class Trunk_testHelper {
 
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		String r = driver.get(baseUrl + "favicon.ico");
-    System.out.println(r);
+		driver.get(baseUrl + "favicon.icosadf");
+
 	    String str = "";
 		/*try {
 		      assertTrue(isElementPresent(By.xpath("(//img[@src='https://trunk-stage.tufts.edu/favicon.ico'])"), driver));
