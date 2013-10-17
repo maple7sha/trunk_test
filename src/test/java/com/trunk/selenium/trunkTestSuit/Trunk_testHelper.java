@@ -13,28 +13,29 @@ import org.openqa.selenium.*;
 
 public class Trunk_testHelper {
 /* ++++ START OF LOGIN ++++ */
-	Scanner in = new Scanner(System.in); 
+	Scanner in = new Scanner(System.in);
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException, Exception, IOException{
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
-		// Logger.getLogger("").addHandler(handler);  // static access 
+		// Logger.getLogger("").addHandler(handler);  // static access
 		Logger.getLogger("").setLevel(Level.OFF);
-		
+
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseUrl + "favicon.ico");
+		String r = driver.get(baseUrl + "favicon.ico");
+    System.out.println(r);
 	    String str = "";
 		/*try {
 		      assertTrue(isElementPresent(By.xpath("(//img[@src='https://trunk-stage.tufts.edu/favicon.ico'])"), driver));
 		} catch (Error e) {
 		      str = e.toString();
 		}*/
-	    
+
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
 	    driver.get(baseUrl + "/xsl-portal");
 	    driver.switchTo().frame(0);
-	    
+
 	    // verify home page info
 		try {
 		      assertTrue(isElementPresent(By.id("logo"), driver));
@@ -44,20 +45,20 @@ public class Trunk_testHelper {
 		} catch (Error e) {
 		      str = e.toString();
 		}
-	    
+
 		// login
 	    driver.findElement(By.id("eid")).clear();
 	    driver.findElement(By.id("eid")).sendKeys("wrong uname");
 	    driver.findElement(By.id("pw")).clear();
 	    driver.findElement(By.id("pw")).sendKeys("wrong password");
 	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
-	
+
 	    // re-login
 	    Thread.sleep(500);
 	    driver.findElement(By.id("eid")).sendKeys(getUname());
 	    driver.findElement(By.id("pw")).sendKeys(getPword());
 	    driver.findElement(By.id("submit")).click();
-	    
+
 	    // verify all elements in the home page
 	    try {
 	        assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
@@ -114,10 +115,10 @@ public class Trunk_testHelper {
 	      } catch (Error e) {
 	    	  str += e.toString();
 	      }
-	    
+
 	    return str;
 	}
-	
+
 	/* get username and password */
 	private String getUname(){
 		//System.out.println("Enter Username");
@@ -128,7 +129,7 @@ public class Trunk_testHelper {
 			System.exit(1);
 		}
 		return uname;
-	}	
+	}
 	private String getPword(){
 		String pword = System.getProperty("sakaiHostPassword");
 		if(pword==null) {
@@ -138,14 +139,14 @@ public class Trunk_testHelper {
 		return pword;
 	}
 /* ---- END OF LOGIN ---- */
-	
-	
-	
+
+
+
 /* ++++ START OF LOGOUT ++++ */
 	public String logout(WebDriver driver) {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
-		
+
 		driver.switchTo().frame(0);
 		String str = "";
 		try {
@@ -156,14 +157,14 @@ public class Trunk_testHelper {
 		} catch (Error e) {
 		      str = e.toString();
 		}
-		
+
 
 		return str;
 	}
 /* ---- END OF LOGOUT ---- */
-	
-	
-	
+
+
+
 /* ++++ START OF verification func ++++ */
 	public boolean isElementPresent(By by, WebDriver driver) {
 	    try {
@@ -173,7 +174,7 @@ public class Trunk_testHelper {
 	      return false;
 	    }
 	  }
-	
+
 	public boolean isAlertPresent(WebDriver driver) {
 		try {
 		  driver.switchTo().alert();
@@ -198,12 +199,12 @@ public class Trunk_testHelper {
 	    }
 	}
 /* ---- END OF verification func ---- */
-	  
-	
-	
+
+
+
 /* ++++ START OF params func ++++ */
 	public String get_sample_txt(){
-		
+
 		String txtaddr = System.getProperty("sampletxt_addr");
 		if(txtaddr==null) {
 			System.err.print("Username not properly passed in");
@@ -215,7 +216,7 @@ public class Trunk_testHelper {
 		}
 		return txtaddr;
 	}
-		
+
 	public String get_sample_jpg(){
 		String jpgaddr = System.getProperty("samplejpg_addr");
 		if(jpgaddr==null) {
@@ -229,9 +230,9 @@ public class Trunk_testHelper {
 		}
 		return jpgaddr;
 	}
-		
+
 	public String get_baseUrl(){
-		
+
 		String baseUrl = System.getProperty("sakaiHostName");
 		if(baseUrl==null) {
 			System.err.print("sakaiHostName not properly passed in");
@@ -239,27 +240,27 @@ public class Trunk_testHelper {
 		}
 		return baseUrl;
 	}
-	
+
 	public String get_uploadtxt_text(){
 		return "this is to upload a .txt file";
 	}
-		
+
 	public String get_cpright_text(){
 		return "copyright owned by the file producers";
 	}
-		
+
 	public String get_search_text(){
 		return "news";
 	}
-		
+
 	public String get_saysth_text(){
 		return "I am happy today";
 	}
-		
+
 	public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
 		driver = new HtmlUnitDriver();
 		// JS must be enabled to allow test2 upload selector to work
-		driver.setJavascriptEnabled(true);  
+		driver.setJavascriptEnabled(true);
 		return driver;
 	}
 /* ---- END OF params func ---- */
