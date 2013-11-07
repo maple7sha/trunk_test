@@ -32,6 +32,10 @@ public class Trunk_testHelper {
 		      str = e.toString();
 		}
 
+		if(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
+			str += "favicon NOT FOUND";
+		}
+		
 		/* lesson learned: must know to switch to the frame!!
 		 interestingly, we have to make it re-login for the script to proceed */
 	    driver.get(baseUrl + "/xsl-portal");

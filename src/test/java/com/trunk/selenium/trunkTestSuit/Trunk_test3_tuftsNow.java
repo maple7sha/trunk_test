@@ -33,7 +33,7 @@ public class Trunk_test3_tuftsNow {
 	driver.switchTo().frame(0);
 	driver.switchTo().frame(driver.findElement(By.id("wciframe")));
     //driver.findElement(By.id("menu-965")).click();  //currently not present
-    driver.findElement(By.id("menu-980")).click();
+    //driver.findElement(By.id("menu-980")).click();
     driver.findElement(By.id("edit-keys")).clear();
     driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
     driver.findElement(By.id("edit-submit")).click();
