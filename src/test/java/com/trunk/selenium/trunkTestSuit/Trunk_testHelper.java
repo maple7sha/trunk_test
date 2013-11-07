@@ -22,7 +22,7 @@ public class Trunk_testHelper {
 
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseUrl + "favicon.ico");
+		driver.get(baseUrl + "favicon.icoasdf");
 
 	    String str = "";
 		
