@@ -49,6 +49,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
+    
     driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
     /* Upload Files */
     driver.switchTo().frame(0);

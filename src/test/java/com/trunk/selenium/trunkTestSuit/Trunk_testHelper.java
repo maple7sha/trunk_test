@@ -22,14 +22,12 @@ public class Trunk_testHelper {
 
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseUrl + "favicon.icosadf");
+		driver.get(baseUrl + "favicon.ico");
 
-		
 	    String str = "";
 		
-
 		try {
-		      assertTrue(driver.findElement(By.xpath("(//h1[contains(text(), 'HTTP Status 404')])"))!=null);
+		      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$"));
 		} catch (Error e) {
 		      str = e.toString();
 		}
@@ -235,8 +233,8 @@ public class Trunk_testHelper {
 	}
 
 	public String get_baseUrl(){
-
-		String baseUrl = System.getProperty("sakaiHostName");
+		// baseUrl passed in as a System property via Jenkins
+		String baseUrl = System.getProperty("sakaiHostName"); 
 		if(baseUrl==null) {
 			System.err.print("sakaiHostName not properly passed in");
 			System.exit(1);
