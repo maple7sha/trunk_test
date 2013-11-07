@@ -27,7 +27,7 @@ public class Trunk_testHelper {
 	    String str = "";
 		
 		try {
-		      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$"));
+		      assertTrue(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$"));
 		} catch (Error e) {
 		      str = e.toString();
 		}
