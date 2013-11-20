@@ -53,7 +53,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
     /* Upload Files */
     driver.switchTo().frame(0);
-    /* Trigger the dropdown menu!!! */
+    /* Trigger the dropdown menu */
     Actions builder = new Actions(driver); 
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));

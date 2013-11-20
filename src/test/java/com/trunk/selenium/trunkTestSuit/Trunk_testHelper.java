@@ -18,20 +18,20 @@ public class Trunk_testHelper {
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
 		// Logger.getLogger("").addHandler(handler);  // static access
-		Logger.getLogger("").setLevel(Level.OFF);
+		Logger.getLogger("").setLevel(Level.INFO); //log every message with severe, warning and info level
 
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseUrl + "favicon.icoasdf");
+		driver.get(baseUrl + "favicon.ico");
 
 	    String str = "";
-		
+		/*
 		try {
 		      assertTrue(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$"));
 		} catch (Error e) {
 		      str = e.toString();
 		}
-
+		*/
 		if(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
 			str += "favicon NOT FOUND";
 		}
@@ -126,11 +126,9 @@ public class Trunk_testHelper {
 
 	/* get username and password */
 	private String getUname(){
-		//System.out.println("Enter Username");
-		//String Uname = in.nextLine();
 		String uname = System.getProperty("sakaiHostUsername");
 		if(uname==null) {
-			System.err.print("sakaiHostUsername not properly passed in");
+			System.err.print("sakaiHost username not found");
 			System.exit(1);
 		}
 		return uname;
@@ -138,7 +136,7 @@ public class Trunk_testHelper {
 	private String getPword(){
 		String pword = System.getProperty("sakaiHostPassword");
 		if(pword==null) {
-			System.err.print("sakaiHostPassword not properly passed in");
+			System.err.print("sakaiHostPassword not found");
 			System.exit(1);
 		}
 		return pword;
