@@ -18,7 +18,7 @@ public class Trunk_testHelper {
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
 		// Logger.getLogger("").addHandler(handler);  // static access
-		Logger.getLogger("").setLevel(Level.INFO); //log every message with severe, warning and info level
+		Logger.getLogger("").setLevel(Level.SEVERE); //log every message with severe, warning and info level
 
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

@@ -7,7 +7,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
 
-
 public class Trunk_test2_upload {private HtmlUnitDriver driver;
   private String baseUrl;
   private StringBuffer verificationErrors = new StringBuffer();
