@@ -37,9 +37,9 @@ public class Trunk_test3_tuftsNow {
     //driver.findElement(By.id("menu-980")).click();
     //driver.findElement(By.id("edit-keys")).clear();
     //driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
-    //driver.findElement(By.id("edit-submit")).click();
+    driver.findElement(By.id("edit-submit")).click();
     
-    driver.switchTo().frame(0);
+    //driver.switchTo().frame(0);
     verificationErrors.append(key.logout(driver));
   }
 
