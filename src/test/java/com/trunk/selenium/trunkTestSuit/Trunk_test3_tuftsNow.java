@@ -35,10 +35,11 @@ public class Trunk_test3_tuftsNow {
 	// following tests are commented out as Tuftsnow may change over time; important thing is to make sure wciframe is present
     //driver.findElement(By.id("menu-965")).click();  //currently not present
     //driver.findElement(By.id("menu-980")).click();
-    driver.findElement(By.id("edit-keys")).clear();
-    driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
-    driver.findElement(By.id("edit-submit")).click();
+    //driver.findElement(By.id("edit-keys")).clear();
+    //driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
+    //driver.findElement(By.id("edit-submit")).click();
     
+    driver.switchTo().frame(0);
     verificationErrors.append(key.logout(driver));
   }
 
