@@ -20,24 +20,17 @@ public class Trunk_testHelper {
 		// Logger.getLogger("").addHandler(handler);  // static access
 		Logger.getLogger("").setLevel(Level.SEVERE); //log every message with severe, warning and info level
 
+		// error string
+		String str = "";
+		
 		// verify favicon
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "favicon.ico");
-
-	    String str = "";
-		/*
-		try {
-		      assertTrue(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$"));
-		} catch (Error e) {
-		      str = e.toString();
-		}
-		*/
 		if(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
 			str += "favicon NOT FOUND";
 		}
 		
-		/* lesson learned: must know to switch to the frame!!
-		 interestingly, we have to make it re-login for the script to proceed */
+		// switch to main frame to start testing
 	    driver.get(baseUrl + "/xsl-portal");
 	    driver.switchTo().frame(0);
 
