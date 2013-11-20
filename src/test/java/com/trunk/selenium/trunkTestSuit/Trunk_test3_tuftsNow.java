@@ -28,15 +28,16 @@ public class Trunk_test3_tuftsNow {
   public void testTrunkTest3() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
-	// got to switch to outer frame first, then switch to inner frame!!!!!
+	// got to switch to outer frame first, then switch to inner frame
 	
 	driver.switchTo().frame(0);
 	driver.switchTo().frame(driver.findElement(By.id("wciframe")));
+	// following tests are commented out as Tuftsnow may change over time; important thing is to make sure wciframe is present
     //driver.findElement(By.id("menu-965")).click();  //currently not present
     //driver.findElement(By.id("menu-980")).click();
     //driver.findElement(By.id("edit-keys")).clear();
-    driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
-    driver.findElement(By.id("edit-submit")).click();
+    //driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
+    //driver.findElement(By.id("edit-submit")).click();
     
     verificationErrors.append(key.logout(driver));
   }
