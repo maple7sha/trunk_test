@@ -26,12 +26,15 @@ public class Trunk_test5_mysetting {
   @Test
   public void testTrunkTest5() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-	// go to profile tab and test
+	
+	// test mysettings
     driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
     driver.switchTo().frame(0);
+    // test adding new message
     driver.findElement(By.name("message")).clear();
     driver.findElement(By.name("message")).sendKeys(key.get_saysth_text());
     driver.findElement(By.name(":submit")).click();
+    // test adding & removing pictures
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
     driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys(key.get_sample_jpg());
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
@@ -46,6 +49,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
     driver.switchTo().defaultContent();  // change back to parent frame 
+    // joining and unjoining sites
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
     driver.switchTo().frame(0);
     driver.findElement(By.linkText("Joinable Sites")).click();
@@ -54,11 +58,10 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.id("check-2")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinconfirm")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinyes")).click();
-    
+    // test preferences
     driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-preferences > span")).click();
     driver.switchTo().frame(0);
-    
     Thread.sleep(5000);
     driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
     driver.findElement(By.cssSelector("img[alt=\"Remove all\"]")).click();

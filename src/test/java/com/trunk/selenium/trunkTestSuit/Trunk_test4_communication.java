@@ -23,7 +23,8 @@ public class Trunk_test4_communication {
   @Test
   public void testTrunkTest4() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-
+	
+	// test announcement page and add new event to schedule 
     driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();
     driver.switchTo().frame(0);
