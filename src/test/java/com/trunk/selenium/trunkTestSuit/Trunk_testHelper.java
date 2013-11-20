@@ -32,7 +32,7 @@ public class Trunk_testHelper {
 		      str = e.toString();
 		}
 		*/
-		if(!driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
+		if(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
 			str += "favicon NOT FOUND";
 		}
 		
