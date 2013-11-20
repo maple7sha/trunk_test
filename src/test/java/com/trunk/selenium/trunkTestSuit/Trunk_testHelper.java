@@ -5,8 +5,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import org.openqa.selenium.*;
 //import java.util.logging.FileHandler;
 //import java.util.logging.Handler;
@@ -203,7 +202,7 @@ public class Trunk_testHelper {
 
 		String txtaddr = System.getProperty("sampletxt_addr");
 		if(txtaddr==null) {
-			System.err.print("Username not properly passed in");
+			System.err.print("directory to sample.txt not correctly passed in");
 			System.exit(1);
 		}
 		else if(!txtaddr.endsWith(".txt")){
@@ -216,7 +215,7 @@ public class Trunk_testHelper {
 	public String get_sample_jpg(){
 		String jpgaddr = System.getProperty("samplejpg_addr");
 		if(jpgaddr==null) {
-			System.err.print("Username not properly passed in");
+			System.err.print("directory to sample.jpg not correctly passed in");
 			System.exit(1);
 		}
 		// Requirement for the type of images of files to be uploaded: jpg, png, gif, tif
@@ -231,7 +230,7 @@ public class Trunk_testHelper {
 		// baseUrl passed in as a System property via Jenkins
 		String baseUrl = System.getProperty("sakaiHostName"); 
 		if(baseUrl==null) {
-			System.err.print("sakaiHostName not properly passed in");
+			System.err.print("host site name (trunk/trunk-stage) not properly passed in");
 			System.exit(1);
 		}
 		return baseUrl;
