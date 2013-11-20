@@ -11,14 +11,14 @@ import org.openqa.selenium.*;
 
 public class Trunk_testHelper {
 	
-	private static Logger theLogger = Logger.getLogger(Trunk_testHelper.class.getName());
+	//private static Logger theLogger = Logger.getLogger(Trunk_testHelper.class.getName());
 /* ++++ START OF LOGIN ++++ */
 	Scanner in = new Scanner(System.in);
 	public String login(String baseUrl, WebDriver driver) throws InterruptedException, Exception, IOException{
 		// suppressing all html warning messages; handler to output messages to "testLog.log" (currently commented out)
 		// Handler handler = new FileHandler("testLog.log");
 		// Logger.getLogger("").addHandler(handler);  // static access
-		Logger.getLogger("").setLevel(Level.SEVERE); //log every message with severe, warning and info level
+		Logger.getLogger("").setLevel(Level.SEVERE); //log every message with severe level
 
 		// error string
 		String str = "";
@@ -121,7 +121,7 @@ public class Trunk_testHelper {
 	private String getUname(){
 		String uname = System.getProperty("sakaiHostUsername");
 		if(uname==null) {
-			theLogger.severe("sakaiHost username not found");
+			System.err.print("sakaiHost username not found");
 			System.exit(1);
 		}
 		return uname;
@@ -129,7 +129,7 @@ public class Trunk_testHelper {
 	private String getPword(){
 		String pword = System.getProperty("sakaiHostPassword");
 		if(pword==null) {
-			theLogger.severe("sakaiHostPassword not found");
+			System.err.print("sakaiHostPassword not found");
 			System.exit(1);
 		}
 		return pword;
@@ -203,11 +203,11 @@ public class Trunk_testHelper {
 
 		String txtaddr = System.getProperty("sampletxt_addr");
 		if(txtaddr==null) {
-			theLogger.severe("directory to sample.txt not correctly passed in");
+			System.err.print("directory to sample.txt not correctly passed in");
 			System.exit(1);
 		}
 		else if(!txtaddr.endsWith(".txt")){
-			theLogger.severe("Wrong type of file is uploaded; TXT file expected");
+			System.err.print("Wrong type of file is uploaded; TXT file expected");
 			System.exit(1);
 		}
 		return txtaddr;
@@ -216,12 +216,12 @@ public class Trunk_testHelper {
 	public String get_sample_jpg(){
 		String jpgaddr = System.getProperty("samplejpg_addr");
 		if(jpgaddr==null) {
-			theLogger.severe("directory to sample.jpg not correctly passed in");
+			System.err.print("directory to sample.jpg not correctly passed in");
 			System.exit(1);
 		}
 		// Requirement for the type of images of files to be uploaded: jpg, png, gif, tif
 		else if(!(jpgaddr.endsWith(".jpg")||jpgaddr.endsWith(".png")||jpgaddr.endsWith(".gif")||jpgaddr.endsWith(".tif"))){
-			theLogger.severe("Wrong type of file is uploaded; image file expected");
+			System.err.print("Wrong type of file is uploaded; image file expected");
 			System.exit(1);
 		}
 		return jpgaddr;
@@ -231,7 +231,7 @@ public class Trunk_testHelper {
 		// baseUrl passed in as a System property via Jenkins
 		String baseUrl = System.getProperty("sakaiHostName"); 
 		if(baseUrl==null) {
-			theLogger.severe("host site name (trunk/trunk-stage) not properly passed in");
+			System.err.print("host site name (trunk/trunk-stage) not properly passed in");
 			System.exit(1);
 		}
 		return baseUrl;
