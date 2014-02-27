@@ -55,7 +55,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.linkText("Joinable Sites")).click();
     driver.findElement(By.linkText("Join")).click();
     driver.findElement(By.linkText("My Current Sites")).click();
-    driver.findElement(By.id("check-2")).click();
+    driver.findElement(By.id("check-1")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinconfirm")).click();
     driver.findElement(By.name("eventSubmit_doGoto_unjoinyes")).click();
     // test preferences
