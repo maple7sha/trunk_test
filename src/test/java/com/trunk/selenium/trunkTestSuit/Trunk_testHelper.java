@@ -32,7 +32,7 @@ public class Trunk_testHelper {
 		
 		// switch to main frame to start testing
 	    driver.get(baseUrl + "/xsl-portal");
-	    driver.switchTo().frame(0);
+	    //driver.switchTo().frame(0);
 
 	    // verify home page info
 		try {
