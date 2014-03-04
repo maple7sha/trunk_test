@@ -143,7 +143,7 @@ public class Trunk_testHelper {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
 
-		driver.switchTo().frame(0);
+		//driver.switchTo().frame(0);
 		String str = "";
 		try {
 		      assertTrue(isElementPresent(By.id("logo"), driver));
