@@ -84,12 +84,16 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     driver.switchTo().defaultContent();
     
     // verify the files are deleted
+    if(key.isElementPresent(By.xpath(xpath_to_txtaddr), driver)){
+    	verificationErrors.append("\n line 88, Trunk_test2_upload, program should deleted all uploaded files \n");
+    }
+    /*
     try {
         assertFalse(key.isElementPresent(By.xpath(xpath_to_txtaddr), driver));
     } catch (Error e) {
-        verificationErrors.append(e.toString());
+        
     }
-    
+    */
     verificationErrors.append(key.logout(driver));
   }
 
