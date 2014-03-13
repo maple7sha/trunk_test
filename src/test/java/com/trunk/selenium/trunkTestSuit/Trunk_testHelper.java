@@ -27,7 +27,7 @@ public class Trunk_testHelper {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "favicon.ico");
 		if(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Status report[\\s\\S]*$")){
-			str += "favicon NOT FOUND";
+                  str += "favicon NOT FOUND";
 		}
 		
 		// switch to main frame to start testing
@@ -46,7 +46,7 @@ public class Trunk_testHelper {
 
 		// login
 	    //driver.findElement(By.id("eid")).clear();
-	    driver.findElement(By.id("eid")).sendKeys("wrong uname");
+	    //driver.findElement(By.id("eid")).sendKeys("wrong uname");
 	    driver.findElement(By.id("pw")).clear();
 	    driver.findElement(By.id("pw")).sendKeys("wrong password");
 	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
