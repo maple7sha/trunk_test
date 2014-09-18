@@ -14,6 +14,9 @@ public class Trunk_test1_login {
   
   @Before
   public void setUp() throws Exception {
+    System.out.println("The total pay is ");
+    System.exit(1);
+    
 	driver = key.get_driver(driver);
     baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
