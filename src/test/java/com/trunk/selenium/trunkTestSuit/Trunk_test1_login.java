@@ -14,29 +14,28 @@ public class Trunk_test1_login {
   
   @Before
   public void setUp() throws Exception {
-    /*System.out.println("The total pay is ");
-    System.exit(1);
+   
 	driver = key.get_driver(driver);
     baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    */
+    
   }
 
   @Test
   public void testTrunkTest1() throws Exception {	
-	//verificationErrors.append(key.login(baseUrl, driver));
-    //verificationErrors.append(key.logout(driver));
+	verificationErrors.append(key.login(baseUrl, driver));
+    verificationErrors.append(key.logout(driver));
   }
 
   @After
   public void tearDown() throws Exception {
-    /*driver.quit();
+    driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       PrintStream out = System.out;
       out.println(verificationErrorString);
       fail(verificationErrorString);
     }
-      */
+   
   }
 }
