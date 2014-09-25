@@ -58,7 +58,7 @@ public class Trunk_testHelper {
 	    Thread.sleep(500);
 	    driver.findElement(By.id("name")).sendKeys(getUname());
 	    driver.findElement(By.id("pass")).sendKeys(getPword());
-	    driver.findElement(By.id("submit")).click();
+	    driver.findElement(By.id("button")).click();
 
 	    // verify all elements in the home page
 	    try {
