@@ -146,13 +146,13 @@ public class Trunk_testHelper {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.cssSelector("a[title=\"Logout\"]")).click();
 
-		driver.switchTo().frame(0);
+		//driver.switchTo().frame(0);
 		String str = "";
 		try {
-		      assertTrue(isElementPresent(By.id("logo"), driver));
-		      assertTrue(isElementPresent(By.id("welcome"), driver));
-		      assertTrue(isElementPresent(By.id("middle_col"), driver));
-		      assertTrue(isElementPresent(By.id("right_col"), driver));
+		      assertTrue(isElementPresent(By.id("header1"), driver));
+		      assertTrue(isElementPresent(By.id("footer_container"), driver));
+		      //assertTrue(isElementPresent(By.id("middle_col"), driver));
+		      //assertTrue(isElementPresent(By.id("right_col"), driver));
 		} catch (Error e) {
 		      str = e.toString();
 		}
