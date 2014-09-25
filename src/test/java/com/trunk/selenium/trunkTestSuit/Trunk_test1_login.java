@@ -14,11 +14,9 @@ public class Trunk_test1_login {
   
   @Before
   public void setUp() throws Exception {
-   
 	driver = key.get_driver(driver);
     baseUrl = key.get_baseUrl();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    
   }
 
   @Test

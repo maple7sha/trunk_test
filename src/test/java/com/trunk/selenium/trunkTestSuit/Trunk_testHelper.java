@@ -45,16 +45,16 @@ public class Trunk_testHelper {
 		}
 
 		// login
-	    //driver.findElement(By.id("eid")).clear();
-	    //driver.findElement(By.id("eid")).sendKeys("wrong uname");
-	    //driver.findElement(By.id("pw")).clear();
-	    //driver.findElement(By.id("pw")).sendKeys("wrong password");
-	    //driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
+	    driver.findElement(By.id("name")).clear();
+	    driver.findElement(By.id("name")).sendKeys("wrong uname");
+	    driver.findElement(By.id("pass")).clear();
+	    driver.findElement(By.id("pass")).sendKeys("wrong password");
+	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
 
 	    // re-login
 	    Thread.sleep(500);
 	    driver.findElement(By.id("eid")).sendKeys(getUname());
-	    driver.findElement(By.id("pass")).sendKeys(getPword());
+	    driver.findElement(By.id("pw")).sendKeys(getPword());
 	    driver.findElement(By.id("submit")).click();
 
 	    // verify all elements in the home page
