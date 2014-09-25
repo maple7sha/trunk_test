@@ -49,7 +49,7 @@ public class Trunk_testHelper {
 	    driver.findElement(By.id("name")).sendKeys("wrong uname");
 	    driver.findElement(By.id("pass")).clear();
 	    driver.findElement(By.id("pass")).sendKeys("wrong password");
-	    driver.findElement(By.cssSelector("input[type=\"image\"]")).click();
+	    driver.findElement(By.cssSelector("input[name=\"submit\"]")).click();
 
 	    // re-login
 	    Thread.sleep(500);
@@ -238,19 +238,19 @@ public class Trunk_testHelper {
 	}
 
 	public String get_uploadtxt_text(){
-		return "this is to upload a .txt file";
+		return "To upload a .txt file";
 	}
 
 	public String get_cpright_text(){
-		return "copyright owned by the file producers";
+		return "Copyright owned by the file producers";
 	}
 
 	public String get_search_text(){
-		return "news";
+		return "To get search text";
 	}
 
 	public String get_saysth_text(){
-		return "I am happy today";
+		return "To get saysth text";
 	}
 
 	public HtmlUnitDriver get_driver(HtmlUnitDriver driver){
