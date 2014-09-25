@@ -1,0 +1,62 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'framework7' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'framework7', null ]
+5 verbose cache add name=undefined spec="framework7" args=["framework7",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'framework7',
+6 verbose parsed url   path: 'framework7',
+6 verbose parsed url   href: 'framework7' }
+7 silly lockFile 33b89728-framework7 framework7
+8 verbose lock framework7 /Users/Maple7Sha/.npm/33b89728-framework7.lock
+9 silly lockFile 33b89728-framework7 framework7
+10 silly lockFile 33b89728-framework7 framework7
+11 verbose addNamed [ 'framework7', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 50431d26-framework7 framework7@
+14 verbose lock framework7@ /Users/Maple7Sha/.npm/50431d26-framework7.lock
+15 silly addNameRange { name: 'framework7', range: '*', hasData: false }
+16 verbose url raw framework7
+17 verbose url resolving [ 'https://registry.npmjs.org/', './framework7' ]
+18 verbose url resolved https://registry.npmjs.org/framework7
+19 info trying registry request attempt 1 at 10:54:30
+20 http GET https://registry.npmjs.org/framework7
+21 http 404 https://registry.npmjs.org/framework7
+22 silly registry.get cb [ 404,
+22 silly registry.get   { date: 'Thu, 25 Sep 2014 14:54:30 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=0',
+22 silly registry.get     'content-length': '52',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-iad2132-IAD',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1411656870.807138,VS0,VE63',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly lockFile 50431d26-framework7 framework7@
+24 silly lockFile 50431d26-framework7 framework7@
+25 error 404 'framework7' is not in the npm registry.
+25 error 404 You should bug the author to publish it
+25 error 404
+25 error 404 Note that you can also install from a
+25 error 404 tarball, folder, or http url, or git url.
+26 error System Darwin 13.1.0
+27 error command "node" "/usr/local/bin/npm" "install" "framework7"
+28 error cwd /Users/Maple7Sha/Coding/trunk_test/trunk_test
+29 error node -v v0.10.26
+30 error npm -v 1.4.3
+31 error code E404
+32 verbose exit [ 1, true ]

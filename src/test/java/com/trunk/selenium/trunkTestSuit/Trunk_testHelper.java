@@ -49,8 +49,10 @@ public class Trunk_testHelper {
 	    driver.findElement(By.id("name")).sendKeys("wrong uname");
 	    driver.findElement(By.id("pass")).clear();
 	    driver.findElement(By.id("pass")).sendKeys("wrong password");
-	    driver.findElement(By.cssSelector("input[name=\"submit\"]")).click();
-
+	    //driver.findElement(By.cssSelector("input[class=\"loginsubmit\"]")).click();
+        driver.findElement(By.name("submit")).click();
+        
+        
 	    // re-login
 	    Thread.sleep(500);
 	    driver.findElement(By.id("eid")).sendKeys(getUname());
