@@ -45,12 +45,13 @@ public class Trunk_testHelper {
 		}
 
 		// login
-	    driver.findElement(By.id("name")).clear();
+	    
+        driver.findElement(By.id("name")).clear();
 	    driver.findElement(By.id("name")).sendKeys("wrong uname");
 	    driver.findElement(By.id("pass")).clear();
 	    driver.findElement(By.id("pass")).sendKeys("wrong password");
-	    //driver.findElement(By.cssSelector("input[class=\"loginsubmit\"]")).click();
-        driver.findElement(By.className("loginsubmit")).click();
+	    driver.findElement(By.cssSelector("input[name=\"submit\"]")).sendKeys(Keys.RETURN);
+        //driver.findElement(By.className("loginsubmit")).click();  .sendKeys(Keys.return);
         
         
 	    // re-login
