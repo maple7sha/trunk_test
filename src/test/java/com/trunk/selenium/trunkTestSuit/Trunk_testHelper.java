@@ -36,13 +36,25 @@ public class Trunk_testHelper {
 
 	    // verify home page info
 		try {
-		      assertTrue(isElementPresent(By.id("logo"), driver));
-		      assertTrue(isElementPresent(By.id("welcome"), driver));
-		      assertTrue(isElementPresent(By.id("middle_col"), driver));
-		      assertTrue(isElementPresent(By.id("right_col"), driver));
+		  assertTrue(isElementPresent(By.id("logo"), driver));
 		} catch (Error e) {
-		      str = e.toString();
-		}
+          str += e.toString() + " Logo present \n";
+		} 
+        try {
+          assertTrue(isElementPresent(By.id("welcome"), driver));
+        } catch (Error e) {
+          str += e.toString() + " Welcome present \n";
+        }
+        try {
+          assertTrue(isElementPresent(By.id("middle_col"), driver));
+        } catch (Error e) {
+          str += e.toString() + " Middle col present \n";
+        }
+        try {
+          assertTrue(isElementPresent(By.id("right_col"), driver));
+        } catch (Error e) {
+          str += e.toString() + " Right col present \n";
+        }
 
 		// login
 	    /*
@@ -64,57 +76,57 @@ public class Trunk_testHelper {
 	    try {
 	        assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
 	      } catch (Error e) {
-	        str += e.toString();
+	        str += e.toString() + " QuickLinks present \n";
 	      }
 	      try {
 	        assertTrue(isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString();
+	    	str += e.toString() + " SiteLinkList present \n";
 	      }
 	      try {
 	        assertTrue(isElementPresent(By.xpath("//div[@id=\"toolMenu\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString();
+	    	str += e.toString() + " ToolMenu present \n";
 	      }
 	      try {
 	        assertTrue(isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString();
+	    	str += e.toString() + " Sitetitle present \n";
 	      }
 	      try {
 	        assertTrue(isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString();
+	    	str += e.toString() + " Content present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Workspace[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	str += e.toString();
+	    	str += e.toString() + " My WorkSpace present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Home[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	  str += e.toString();
+	    	  str += e.toString() + " Home present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Sites[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	  str += e.toString();
+	    	  str += e.toString() + " My sites present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Hello,[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	  str += e.toString();
+	    	  str += e.toString() + " Hello  present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Logout[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	  str += e.toString();
+	    	  str += e.toString() + " Logout present \n";
 	      }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Help[\\s\\S]*$"));
 	      } catch (Error e) {
-	    	  str += e.toString();
+	    	  str += e.toString() + " Help present \n";
 	      }
 
 	    return str;
@@ -154,10 +166,8 @@ public class Trunk_testHelper {
 		      //assertTrue(isElementPresent(By.id("middle_col"), driver));
 		      //assertTrue(isElementPresent(By.id("right_col"), driver));
 		} catch (Error e) {
-		      str = e.toString();
+		      str = e.toString() + " Post-logout present \n";
 		}
-
-
 		return str;
 	}
 /* ---- END OF LOGOUT ---- */
