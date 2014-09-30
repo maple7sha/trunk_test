@@ -34,26 +34,21 @@ public class Trunk_testHelper {
 	    driver.get(baseUrl + "/xsl-portal");
 	    //driver.switchTo().frame(0);
 
-	    // verify home page info
+	    // verify home page info prior to login
 		try {
-		  assertTrue(isElementPresent(By.id("logo"), driver));
+		  assertTrue(isElementPresent(By.id("sidebar_text"), driver));
 		} catch (Error e) {
-          str += e.toString() + " Logo present \n";
+          str += e.toString() + " Sidebar_text present \n";
 		} 
         try {
-          assertTrue(isElementPresent(By.id("welcome"), driver));
+          assertTrue(isElementPresent(By.id("login_form"), driver));
         } catch (Error e) {
-          str += e.toString() + " Welcome present \n";
+          str += e.toString() + " login_form present \n";
         }
         try {
-          assertTrue(isElementPresent(By.id("middle_col"), driver));
+          assertTrue(isElementPresent(By.id("exifviewer-img-1"), driver));
         } catch (Error e) {
-          str += e.toString() + " Middle col present \n";
-        }
-        try {
-          assertTrue(isElementPresent(By.id("right_col"), driver));
-        } catch (Error e) {
-          str += e.toString() + " Right col present \n";
+          str += e.toString() + " Trunk icon image present \n";
         }
 
 		// login
@@ -72,14 +67,14 @@ public class Trunk_testHelper {
 	    driver.findElement(By.id("pass")).sendKeys(getPword());
 	    driver.findElement(By.id("button")).click();
 
-	    // verify all elements in the home page
+	    // verify all elements in the home page after login
 	    try {
-	        assertTrue(isElementPresent(By.xpath("//div[@id=\"quickLinks\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//a[@id=\"portalLogo\"]"), driver));
 	      } catch (Error e) {
-	        str += e.toString() + " QuickLinks present \n";
+	        str += e.toString() + " Portal Logo present \n";
 	      }
 	      try {
-	        assertTrue(isElementPresent(By.xpath("//ul[@id=\"siteLinkList\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//ul[@id=\"topnav\"]"), driver));
 	      } catch (Error e) {
 	    	str += e.toString() + " SiteLinkList present \n";
 	      }
@@ -89,15 +84,20 @@ public class Trunk_testHelper {
 	    	str += e.toString() + " ToolMenu present \n";
 	      }
 	      try {
-	        assertTrue(isElementPresent(By.xpath("//div[@id=\"siteTitle\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//div[@id=\"footer\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString() + " Sitetitle present \n";
+	    	str += e.toString() + " Footer present \n";
 	      }
 	      try {
-	        assertTrue(isElementPresent(By.xpath("//div[@id=\"content\"]"), driver));
+	        assertTrue(isElementPresent(By.xpath("//a[@id=\"chatToggle\"]"), driver));
 	      } catch (Error e) {
-	    	str += e.toString() + " Content present \n";
+	    	str += e.toString() + " Chat toggle present \n";
 	      }
+          try {
+            assertTrue(isElementPresent(By.xpath("//a[@id=\"loginLink1\"]"), driver));
+          } catch (Error e) {
+            str += e.toString() + " Logout Button Present \n";
+          }
 	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Workspace[\\s\\S]*$"));
 	      } catch (Error e) {
@@ -160,14 +160,21 @@ public class Trunk_testHelper {
 
 		//driver.switchTo().frame(0);
 		String str = "";
-		try {
-		      assertTrue(isElementPresent(By.id("header1"), driver));
-		      assertTrue(isElementPresent(By.id("footer_container"), driver));
-		      //assertTrue(isElementPresent(By.id("middle_col"), driver));
-		      //assertTrue(isElementPresent(By.id("right_col"), driver));
+        try {
+		  assertTrue(isElementPresent(By.id("sidebar_text"), driver));
 		} catch (Error e) {
-		      str = e.toString() + " Post-logout present \n";
-		}
+          str += e.toString() + " Logout: Sidebar_text present \n";
+		} 
+        try {
+          assertTrue(isElementPresent(By.id("login_form"), driver));
+        } catch (Error e) {
+          str += e.toString() + " Logout: login_form present \n";
+        }
+        try {
+          assertTrue(isElementPresent(By.id("exifviewer-img-1"), driver));
+        } catch (Error e) {
+          str += e.toString() + " Logout: Trunk icon image present \n";
+        } 
 		return str;
 	}
 /* ---- END OF LOGOUT ---- */

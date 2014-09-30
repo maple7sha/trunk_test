@@ -30,7 +30,6 @@ public class Trunk_test1_login {
     driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
-      verificationErrorString += "PRINT OUT THE ERROR STRING EXPLICITLY";
       PrintStream out = System.out;
       out.println(verificationErrorString);
       fail(verificationErrorString);
