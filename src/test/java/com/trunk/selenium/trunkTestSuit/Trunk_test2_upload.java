@@ -28,11 +28,12 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     // driver.switchTo().frame(0);
     // Trigger the dropdown menu 
     Actions builder = new Actions(driver); 
-    WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
+    
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
-    menu.click();              
+    menu.click();           
+    WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
     upload.click();
     // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
