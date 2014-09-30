@@ -45,11 +45,6 @@ public class Trunk_testHelper {
         } catch (Error e) {
           str += e.toString() + " login_form present \n";
         }
-        try {
-          assertTrue(isElementPresent(By.id("exifviewer-img-1"), driver));
-        } catch (Error e) {
-          str += e.toString() + " Trunk icon image present \n";
-        }
 
 		// login
 	    /*
@@ -109,16 +104,6 @@ public class Trunk_testHelper {
 	    	  str += e.toString() + " Home present \n";
 	      }
 	      try {
-	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*My Sites[\\s\\S]*$"));
-	      } catch (Error e) {
-	    	  str += e.toString() + " My sites present \n";
-	      }
-	      try {
-	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Hello,[\\s\\S]*$"));
-	      } catch (Error e) {
-	    	  str += e.toString() + " Hello  present \n";
-	      }
-	      try {
 	        assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Logout[\\s\\S]*$"));
 	      } catch (Error e) {
 	    	  str += e.toString() + " Logout present \n";
@@ -170,11 +155,6 @@ public class Trunk_testHelper {
         } catch (Error e) {
           str += e.toString() + " Logout: login_form present \n";
         }
-        try {
-          assertTrue(isElementPresent(By.id("exifviewer-img-1"), driver));
-        } catch (Error e) {
-          str += e.toString() + " Logout: Trunk icon image present \n";
-        } 
 		return str;
 	}
 /* ---- END OF LOGOUT ---- */
