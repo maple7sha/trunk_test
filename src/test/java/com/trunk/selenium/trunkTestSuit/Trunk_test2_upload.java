@@ -24,6 +24,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
 	verificationErrors.append(key.login(baseUrl, driver));
     
     driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
+    driver.findElement(By.xpath("(//span[contains(text(), 'Add')])")).click();
     // Upload Files 
     // driver.switchTo().frame(0);
     // Trigger the dropdown menu 
