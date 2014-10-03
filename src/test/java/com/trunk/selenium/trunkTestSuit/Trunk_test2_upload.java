@@ -28,7 +28,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     // Upload Files 
     //driver.switchTo().frame(0);
     // Trigger the dropdown menu 
-    //driver.switchTo().frame(Main3203b183x6c2cx4311x9c5dx0fe4d9f35c16);
+    //driver.switchTo().frame(driver.findElement(By.id("Main3203b183x6c2cx4311x9c5dx0fe4d9f35c16")));
     
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     Actions builder = new Actions(driver); 
@@ -41,10 +41,11 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     upload.click();
     // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
-    driver.findElement(By.id("description_0")).clear();
+    /*driver.findElement(By.id("description_0")).clear();
     driver.findElement(By.id("description_0")).sendKeys(key.get_uploadtxt_text());
     driver.findElement(By.id("newcopyright_0")).clear();
     driver.findElement(By.id("newcopyright_0")).sendKeys(key.get_cpright_text());
+    */
     driver.findElement(By.id("saveChanges")).click();
     
     String xpath_to_txtaddr = String.format("//a[contains(text(), '%s')]", key.get_sample_txt());
