@@ -1,15 +1,14 @@
 package com.trunk.selenium.trunkTestSuit;
 
 import java.util.concurrent.TimeUnit;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-
-//import org.apache.commons.logging.LogFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
-
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.interactions.Actions;
+
+//import org.apache.commons.logging.LogFactory;
+
 
 public class Trunk_test3_tuftsNow {
   private HtmlUnitDriver driver;
@@ -26,20 +25,20 @@ public class Trunk_test3_tuftsNow {
 
   @Test
   public void testTrunkTest3() throws Exception {
+    String str = "";
 	verificationErrors.append(key.login(baseUrl, driver));
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame
 	
-	driver.switchTo().frame(0);
-	driver.switchTo().frame(driver.findElement(By.id("wciframe")));
-	// following tests are commented out as Tuftsnow may change over time; important thing is to make sure wciframe is present
-    //driver.findElement(By.id("menu-965")).click();  //currently not present
-    //driver.findElement(By.id("menu-980")).click();
-    //driver.findElement(By.id("edit-keys")).clear();
-    //driver.findElement(By.id("edit-keys")).sendKeys(key.get_search_text());
-    driver.findElement(By.id("edit-submit")).click();
-    
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
+    try {
+      assertTrue(key.isElementPresent(By.xpath("(//h2[contains(text(), 'Connect With Tufts')])"), driver));
+      assertTrue(key.isElementPresent(By.id("logo"), driver));
+    } catch (Error e) {
+      str += e.toString() + " Tufts Now elements not present \n";
+    } 
     //driver.switchTo().frame(0);
+    verificationErrors.append(str);
     verificationErrors.append(key.logout(driver));
   }
 
