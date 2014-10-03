@@ -28,8 +28,9 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     // Upload Files 
     //driver.switchTo().frame(0);
     // Trigger the dropdown menu 
+    //driver.switchTo().frame(Main3203b183x6c2cx4311x9c5dx0fe4d9f35c16);
     
-    driver.switchTo().frame(1);
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     Actions builder = new Actions(driver); 
     
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), '&nbsp;Add')])"));
