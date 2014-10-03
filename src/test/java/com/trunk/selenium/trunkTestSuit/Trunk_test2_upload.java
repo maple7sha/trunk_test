@@ -41,7 +41,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     String xpath_to_txtaddr = String.format("//a[contains(text(), '%s')]", key.get_sample_txt());
     // verify that files are there 
     try {
-        assertTrue(key.isElementPresent(By.xpath(xpath_to_txtaddr), driver));
+        assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'sample.txt')])"), driver));
     } catch (Error e) {
         String err= e.toString() + "Uploaded text not present";
         verificationErrors.append(err);
