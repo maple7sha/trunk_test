@@ -29,7 +29,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     //driver.switchTo().frame(0);
     // Trigger the dropdown menu 
     
-    driver.switchTo().frame(0);
+    driver.switchTo().frame(1);
     Actions builder = new Actions(driver); 
     
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), '&nbsp;Add')])"));
