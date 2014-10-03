@@ -33,7 +33,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     Actions builder = new Actions(driver); 
     
-    WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), '&nbsp;Add')])"));
+    WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
     menu.click();           
