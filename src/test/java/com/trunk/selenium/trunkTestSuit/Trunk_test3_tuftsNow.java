@@ -33,7 +33,6 @@ public class Trunk_test3_tuftsNow {
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     try {
       assertTrue(key.isElementPresent(By.xpath("(//h2[contains(text(), 'Connect With Tufts')])"), driver));
-      assertTrue(key.isElementPresent(By.id("logo"), driver));
     } catch (Error e) {
       str += e.toString() + " Tufts Now elements not present \n";
     } 
