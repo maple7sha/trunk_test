@@ -30,9 +30,8 @@ public class Trunk_test3_tuftsNow {
 	driver.findElement(By.xpath("(//span[contains(text(), 'Tufts Now')])")).click();
 	// got to switch to outer frame first, then switch to inner frame
 	
-    //driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
-    
-    driver.switchTo().frame(driver.findElement(By.id("id92aad4ec_6d34_48c1_956f_03ce02da9145")));
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
+    //driver.switchTo().frame(driver.findElement(By.id("id92aad4ec_6d34_48c1_956f_03ce02da9145")));
     
     try {
       assertTrue(key.isElementPresent(By.id("main-content"), driver));
