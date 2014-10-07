@@ -34,9 +34,9 @@ public class Trunk_test3_tuftsNow {
     //driver.switchTo().frame(driver.findElement(By.id("id92aad4ec_6d34_48c1_956f_03ce02da9145")));
     
     try {
-      assertTrue(key.isElementPresent(By.id("main-content"), driver));
+      assertTrue(driver.findElements(By.className("js")) != null);
     } catch (Error e) {
-      str += e.toString() + " Tufts Now main-content not present \n";
+      str += e.toString() + " Tufts Now iframe not present \n";
     }
     
     //driver.switchTo().frame(0);
