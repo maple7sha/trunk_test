@@ -26,7 +26,6 @@ public class Trunk_test5_mysetting {
   @Test
   public void testTrunkTest5() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-    driver.findElement(By.xpath("(//span[contains(text(), 'Preferences')])")).click();
     driver.findElement(By.xpath("(//span[contains(text(), 'Profile2')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
 //driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
