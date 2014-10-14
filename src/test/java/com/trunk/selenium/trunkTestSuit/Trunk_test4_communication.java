@@ -23,8 +23,10 @@ public class Trunk_test4_communication {
   @Test
   public void testTrunkTest4() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-	
-	// test announcement page and add new event to schedule 
+	driver.findElement(By.xpath("(//span[contains(text(), 'Announcements')])")).click();
+    driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
+    driver.findElement(By.xpath("(//a[contains(text(), 'Add')])")).click();
+/*	// test announcement page and add new event to schedule 
     driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();
     driver.switchTo().frame(0);
@@ -43,6 +45,7 @@ public class Trunk_test4_communication {
     driver.findElement(By.linkText("new event")).click();
     driver.findElement(By.name("eventSubmit_doDelete")).click();
     driver.findElement(By.name("eventSubmit_doConfirm")).click();
+*/
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
