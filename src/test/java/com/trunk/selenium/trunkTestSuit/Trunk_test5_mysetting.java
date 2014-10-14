@@ -36,13 +36,13 @@ public class Trunk_test5_mysetting {
     // test adding new message
     driver.findElement(By.name("message")).clear();
     driver.findElement(By.name("message")).sendKeys("Say something here");//key.get_saysth_text());
-    driver.findElement(By.id("id82")).click();
+    driver.findElement(By.name(":submit")).click();
     // test adding & removing pictures
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
     driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys(key.get_sample_jpg());
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
-    /*
-    driver.findElement(By.cssSelector("img")).click();
+    
+    driver.findElement(By.id("idd5")).click();
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
     for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
@@ -53,6 +53,8 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
     driver.switchTo().defaultContent();  // change back to parent frame 
+    
+    
     // joining and unjoining sites
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
     driver.switchTo().frame(0);
@@ -72,7 +74,7 @@ public class Trunk_test5_mysetting {
     driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
-      */
+      
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
