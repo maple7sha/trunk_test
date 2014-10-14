@@ -41,7 +41,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
     driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys(key.get_sample_jpg());
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
-    
+    /*
     driver.findElement(By.id("idd5")).click();
     driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
     for (int second = 0;; second++) {
@@ -53,7 +53,7 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
     driver.switchTo().defaultContent();  // change back to parent frame 
-    
+    */
     
     // joining and unjoining sites
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
