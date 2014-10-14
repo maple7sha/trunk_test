@@ -26,10 +26,14 @@ public class Trunk_test5_mysetting {
   @Test
   public void testTrunkTest5() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-	
-	// test mysettings
-    driver.findElement(By.cssSelector("a.icon-sakai-profile2 > span")).click();
-    driver.switchTo().frame(0);
+    driver.findElement(By.xpath("(//span[contains(text(), 'Preferences')])")).click();
+    driver.findElement(By.xpath("(//span[contains(text(), 'Profile2')])")).click();
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
+//driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
+
+//driver.findElement(By.xpath("(//a[contains(text(), 'Add')])")).click();
+//driver.findElement(By.cssSelector("input[name=\"eventSubmit_doCancel\"]")).sendKeys(Keys.RETURN);    
+    
     // test adding new message
     driver.findElement(By.name("message")).clear();
     driver.findElement(By.name("message")).sendKeys(key.get_saysth_text());
