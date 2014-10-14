@@ -25,27 +25,10 @@ public class Trunk_test4_communication {
 	verificationErrors.append(key.login(baseUrl, driver));
 	driver.findElement(By.xpath("(//span[contains(text(), 'Announcements')])")).click();
     driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     driver.findElement(By.xpath("(//a[contains(text(), 'Add')])")).click();
-/*	// test announcement page and add new event to schedule 
-    driver.findElement(By.cssSelector("a.icon-sakai-announcements > span")).click();
-    driver.findElement(By.cssSelector("a.icon-sakai-schedule > span")).click();
-    driver.switchTo().frame(0);
-    driver.findElement(By.linkText("Add")).click();
-    driver.findElement(By.id("activitytitle")).clear();
-    driver.findElement(By.id("activitytitle")).sendKeys("new event");
-    new Select(driver.findElement(By.id("startHour"))).selectByVisibleText("1");
-    new Select(driver.findElement(By.id("yearSelect"))).selectByVisibleText("2017");
-    driver.findElement(By.name("eventSubmit_doAdd")).click();
-    driver.findElement(By.linkText("Merge")).click();
-    driver.findElement(By.name("eventSubmit_doUpdate")).click();
-    driver.findElement(By.linkText("Fields")).click();
-    driver.findElement(By.name("eventSubmit_doUpdate")).click();
-    driver.findElement(By.linkText("Permissions")).click();
-    driver.findElement(By.name("eventSubmit_doSave")).click();
-    driver.findElement(By.linkText("new event")).click();
-    driver.findElement(By.name("eventSubmit_doDelete")).click();
-    driver.findElement(By.name("eventSubmit_doConfirm")).click();
-*/
+    driver.findElement(By.cssSelector("input[name=\"eventSubmit_doCancel\"]")).sendKeys(Keys.RETURN);
+
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
