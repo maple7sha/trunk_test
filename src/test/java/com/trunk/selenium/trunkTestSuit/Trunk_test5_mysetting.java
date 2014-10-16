@@ -28,10 +28,9 @@ public class Trunk_test5_mysetting {
 	verificationErrors.append(key.login(baseUrl, driver));
     driver.findElement(By.xpath("(//span[contains(text(), 'Profile2')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
-//driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
-
-//driver.findElement(By.xpath("(//a[contains(text(), 'Add')])")).click();
-//driver.findElement(By.cssSelector("input[name=\"eventSubmit_doCancel\"]")).sendKeys(Keys.RETURN);    
+    //driver.findElement(By.xpath("(//span[contains(text(), 'Calendar')])")).click();
+    //driver.findElement(By.xpath("(//a[contains(text(), 'Add')])")).click();
+    //driver.findElement(By.cssSelector("input[name=\"eventSubmit_doCancel\"]")).sendKeys(Keys.RETURN);    
     
     // test adding new message
     driver.findElement(By.name("message")).clear();
@@ -57,7 +56,7 @@ public class Trunk_test5_mysetting {
     
     // joining and unjoining sites
     driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
-    driver.switchTo().frame(0);
+    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     driver.findElement(By.linkText("Joinable Sites")).click();
     driver.findElement(By.linkText("Join")).click();
     driver.findElement(By.linkText("My Current Sites")).click();
