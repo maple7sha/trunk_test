@@ -26,7 +26,7 @@ public class Trunk_test7_preference{
   @Test
   public void testTrunkTest7() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-    driver.findElement(By.xpath("(//span[contains(text(), 'Preference')])")).click();
+    driver.findElement(By.xpath("(//span[contains(text(), 'Preferences')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
 
     Thread.sleep(5000);
