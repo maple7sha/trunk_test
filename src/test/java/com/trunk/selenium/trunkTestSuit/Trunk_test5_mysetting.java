@@ -54,26 +54,6 @@ public class Trunk_test5_mysetting {
     driver.switchTo().defaultContent();  // change back to parent frame 
     */
     
-    // joining and unjoining sites
-    driver.findElement(By.cssSelector("a.icon-sakai-membership > span")).click();
-    driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
-    driver.findElement(By.linkText("Joinable Sites")).click();
-    driver.findElement(By.linkText("Join")).click();
-    driver.findElement(By.linkText("My Current Sites")).click();
-    driver.findElement(By.id("check-1")).click();
-    driver.findElement(By.name("eventSubmit_doGoto_unjoinconfirm")).click();
-    driver.findElement(By.name("eventSubmit_doGoto_unjoinyes")).click();
-    // test preferences
-    driver.switchTo().defaultContent();
-    driver.findElement(By.cssSelector("a.icon-sakai-preferences > span")).click();
-    driver.switchTo().frame(0);
-    Thread.sleep(5000);
-    driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
-    driver.findElement(By.cssSelector("img[alt=\"Remove all\"]")).click();
-    driver.switchTo().defaultContent();
-    driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
-    driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
-      
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }

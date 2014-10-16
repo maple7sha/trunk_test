@@ -28,7 +28,6 @@ public class Trunk_test6_membership{
 	verificationErrors.append(key.login(baseUrl, driver));
     driver.findElement(By.xpath("(//span[contains(text(), 'Membership')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
-
     driver.findElement(By.linkText("Joinable Sites")).click();
     driver.findElement(By.linkText("Join")).click();
     driver.findElement(By.linkText("My Current Sites")).click();
