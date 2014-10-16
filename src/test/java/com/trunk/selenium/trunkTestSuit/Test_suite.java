@@ -10,6 +10,7 @@ import org.junit.runners.Suite;
 	//Trunk_test4_communication.class,
 	Trunk_test5_mysetting.class,
     Trunk_test6_membership.class,
+    Trunk_test7_preference.class
 })
 
 public class Test_suite{

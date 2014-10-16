@@ -10,7 +10,7 @@ import org.openqa.selenium.*;
 //import java.util.regex.Pattern;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class Trunk_test6_membership{
+public class Trunk_test7_preference{
   private HtmlUnitDriver driver;
   private String baseUrl;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -24,18 +24,18 @@ public class Trunk_test6_membership{
   }
 
   @Test
-  public void testTrunkTest6() throws Exception {
+  public void testTrunkTest7() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-    driver.findElement(By.xpath("(//span[contains(text(), 'Membership')])")).click();
+    driver.findElement(By.xpath("(//span[contains(text(), 'Preference')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
 
-    driver.findElement(By.linkText("Joinable Sites")).click();
-    driver.findElement(By.linkText("Join")).click();
-    driver.findElement(By.linkText("My Current Sites")).click();
-    driver.findElement(By.id("check-1")).click();
-    driver.findElement(By.name("eventSubmit_doGoto_unjoinconfirm")).click();
-    driver.findElement(By.name("eventSubmit_doGoto_unjoinyes")).click();
-    
+    Thread.sleep(5000);
+    driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
+    driver.findElement(By.cssSelector("img[alt=\"Remove all\"]")).click();
+    driver.switchTo().defaultContent();
+    driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
+    driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
+      
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
