@@ -40,20 +40,10 @@ public class Trunk_test5_mysetting {
     driver.findElement(By.cssSelector("a.icon.pictures > span")).click();
     driver.findElement(By.name("addPictureContainer:choosePicture_mf_0")).sendKeys(key.get_sample_jpg());
     driver.findElement(By.name("addPictureContainer:submitPicture")).click();
-    /*
-    driver.findElement(By.id("idd5")).click();
-    driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryImageOptionsContainer:galleryImageRemoveButton")).click();
-    for (int second = 0;; second++) {
-    	if (second >= 60) fail("timeout");
-    	try { if (key.isElementPresent(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton"), driver)) break; } catch (Exception e) {}
-    	Thread.sleep(1000);
-    }
-    driver.findElement(By.name("galleryImageEdit:galleryImageEditForm:galleryRemoveImageConfirmContainer:galleryRemoveImageConfirmButton")).click();
+    
     driver.findElement(By.cssSelector("a.icon.preferences > span")).click();
     driver.findElement(By.cssSelector("a.icon.privacy > span")).click();
-    driver.switchTo().defaultContent();  // change back to parent frame 
-    */
-    
+      
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
