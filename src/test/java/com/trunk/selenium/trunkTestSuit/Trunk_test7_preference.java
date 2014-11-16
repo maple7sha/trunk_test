@@ -33,7 +33,6 @@ public class Trunk_test7_preference{
 
     Thread.sleep(5000);
     driver.findElement(By.cssSelector("img[alt=\"Move selected\"]")).click();
-    driver.switchTo().defaultContent();
     driver.findElement(By.id("prefs_form:submit")).click();
     driver.findElement(By.id("prefs_form:cancel")).click();
 
