@@ -27,6 +27,7 @@ public class Trunk_test7_preference{
   public void testTrunkTest7() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
     driver.findElement(By.xpath("(//span[contains(text(), 'Preferences')])")).click();
+    
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
 
     Thread.sleep(5000);
@@ -35,7 +36,7 @@ public class Trunk_test7_preference{
     driver.switchTo().defaultContent();
     driver.findElement(By.cssSelector("a.icon-sakai-singleuser > span")).click();
     driver.findElement(By.cssSelector("a.icon-sakai-sitesetup > span")).click();
-      
+
     driver.switchTo().defaultContent();
     verificationErrors.append(key.logout(driver));
   }
