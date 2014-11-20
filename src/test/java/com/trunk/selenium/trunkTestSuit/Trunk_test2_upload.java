@@ -36,8 +36,8 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     upload.click();
     // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
-    driver.findElement(By.id("saveChanges")).click();
-    
+    driver.findElement(By.id("saveChanges")).submit();
+  
     String xpath_to_txtaddr = String.format("//a[contains(text(), '%s')]", key.get_sample_txt());
     // verify that files are there 
     try {
@@ -47,7 +47,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         verificationErrors.append(err);
     }    
     
-    // delete all uploaded files 
+ /*   // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
     ((JavascriptExecutor)driver).executeScript("javascript:document.getElementById('sakai_action').value='doMultiItemDispatch';document.getElementById('rt_action').value='delete';document.getElementById('showForm').submit();");
     driver.findElement(By.name("eventSubmit_doFinalizeDelete")).click();
@@ -60,7 +60,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     if(key.isElementPresent(By.xpath(xpath_to_txtaddr), driver)){
     	verificationErrors.append("\n line 88, Trunk_test2_upload, program should deleted all uploaded files \n");
     }
-      
+  */
     verificationErrors.append(key.logout(driver));
   }
 
