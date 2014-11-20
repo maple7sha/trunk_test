@@ -34,6 +34,14 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     menu.click();           
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
     upload.click();
+    
+    try {
+        assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
+    } catch (Error e) {
+        String err= e.toString() + "Upload files now not present";
+        verificationErrors.append(err);
+    }    
+    
     // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
     driver.findElement(By.id("saveChanges")).submit();
