@@ -46,7 +46,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         verificationErrors.append(err);
     }  
     driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
-    
+    /*
     WebElement menu = driver.findElement(By.className("menuOpen"));
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
@@ -54,7 +54,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
     builder.moveToElement(upload).build().perform();
     upload.click();
-    
+    */
     Thread.sleep(3000);
     
     
