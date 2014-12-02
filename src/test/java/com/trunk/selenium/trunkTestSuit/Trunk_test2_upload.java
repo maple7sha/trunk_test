@@ -48,7 +48,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     builder.click(upload).build().perform();
     // have to click the menu after move to the right location!
 
-    driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
+    //driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
     //builder.moveToElement(upload).build().perform();
     Thread.sleep(5000);
     
