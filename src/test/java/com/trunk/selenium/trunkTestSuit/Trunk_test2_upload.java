@@ -21,6 +21,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
 
   @Test
   public void testTrunkTest2() throws Exception {
+    driver.setJavascriptEnabled(true);
 	verificationErrors.append(key.login(baseUrl, driver));
     driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
