@@ -28,12 +28,19 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     
     // Handle hidden menus
     Actions builder = new Actions(driver); 
-    WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
+    //WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
+    
+    WebElement menu = driver.findElement(By.className("menuOpen"));
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
     menu.click();           
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
+    builder.moveToElement(upload).build().perform();
     upload.click();
+    
+    Thread.sleep(3000);
+    
+    
     
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
