@@ -22,14 +22,10 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
   @Test
   public void testTrunkTest2() throws Exception {
 	verificationErrors.append(key.login(baseUrl, driver));
-    
-    driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();    
+    driver.findElement(By.xpath("(//span[contains(text(), 'Resources')])")).click();
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
-    
     // Handle hidden menus
-    Actions builder = new Actions(driver); 
-    
-    
+    Actions builder = new Actions(driver);  
     /*
     try {
         assertTrue(key.isElementPresent(By.className("menuOpen"), driver));
@@ -38,8 +34,6 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         verificationErrors.append(err);
     }  
     driver.findElement(By.className("menuOpen")).click();
-    
-
     */
     //WebElement menu = driver.findElement(By.className("menuOpen"));
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
@@ -51,16 +45,12 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         String err= e.toString() + "\n Cannot find Upload Files button in menu \n";
         verificationErrors.append(err);
     }  
-    builder.moveToElement(upload).click().build().perform();
+    builder.click(upload).build().perform();
     // have to click the menu after move to the right location!
-    
 
-    //driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
+    driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
     //builder.moveToElement(upload).build().perform();
-  
     Thread.sleep(5000);
-    
-    
     
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
