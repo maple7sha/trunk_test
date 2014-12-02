@@ -47,11 +47,9 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     }  
     builder.click(upload).build().perform();
     // have to click the menu after move to the right location!
-
     //driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
     //builder.moveToElement(upload).build().perform();
-    Thread.sleep(5000);
-    
+    Thread.sleep(3000);
     try {
         assertTrue(key.isElementPresent(By.xpath("(//h3[contains(text(), 'Upload Files')])"), driver));
     } catch (Error e) {
@@ -61,16 +59,20 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     
     // upload files 
     driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
+    verificationErrors.append("test"+key.get_sample_txt());
+    Thread.sleep(2000);
     driver.findElement(By.id("saveChanges")).submit();
-  
-    String xpath_to_txtaddr = String.format("//a[contains(text(), '%s')]", key.get_sample_txt());
+    Thread.sleep(4000);
+    
+    //String xpath_to_txtaddr = String.format("//a[contains(text(), '%s')]", key.get_sample_txt());
     // verify that files are there 
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'sample.txt')])"), driver));
     } catch (Error e) {
         String err= e.toString() + "\n Uploaded text not present\n";
         verificationErrors.append(err);
-    }    
+    }   
+    
     
  /*   // delete all uploaded files 
     driver.findElement(By.id("selectall")).click();
