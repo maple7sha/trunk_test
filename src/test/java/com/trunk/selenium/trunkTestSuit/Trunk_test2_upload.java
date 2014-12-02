@@ -28,7 +28,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     
     // Handle hidden menus
     Actions builder = new Actions(driver); 
-    //WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
+    
     
     /*
     try {
@@ -41,17 +41,20 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     
 
     */
-    WebElement menu = driver.findElement(By.className("menuOpen"));
+    //WebElement menu = driver.findElement(By.className("menuOpen"));
+    WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
-    builder.moveToElement(menu).click().moveToElement(upload).click().build().perform();
-    // have to click the menu after move to the right location!
-    
+    builder.moveToElement(menu).click().build().perform();
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files')])"), driver));
     } catch (Error e) {
-        String err= e.toString() + "Cannot find Upload Files button in menu \n";
+        String err= e.toString() + "\n Cannot find Upload Files button in menu \n";
         verificationErrors.append(err);
     }  
+    builder.moveToElement(upload).click().build().perform();
+    // have to click the menu after move to the right location!
+    
+
     //driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
     //builder.moveToElement(upload).build().perform();
   
@@ -62,7 +65,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
     } catch (Error e) {
-        String err= e.toString() + "Upload files now not present \n";
+        String err= e.toString() + "\n Upload files now not present \n";
         verificationErrors.append(err);
     }    
     
@@ -75,7 +78,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'sample.txt')])"), driver));
     } catch (Error e) {
-        String err= e.toString() + "Uploaded text not present";
+        String err= e.toString() + "\n Uploaded text not present\n";
         verificationErrors.append(err);
     }    
     
