@@ -30,6 +30,23 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     Actions builder = new Actions(driver); 
     //WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     
+    
+    try {
+        assertTrue(key.isElementPresent(By.className("menuOpen"), driver));
+    } catch (Error e) {
+        String err= e.toString() + "Cannot find Add menu \n";
+        verificationErrors.append(err);
+    }  
+    driver.findElement(By.className("menuOpen")).click();
+    
+    try {
+        assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files')])"), driver));
+    } catch (Error e) {
+        String err= e.toString() + "Cannot find Upload Files button in menu \n";
+        verificationErrors.append(err);
+    }  
+    driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
+    
     WebElement menu = driver.findElement(By.className("menuOpen"));
     builder.moveToElement(menu).build().perform();
     // have to click the menu after move to the right location!
@@ -45,7 +62,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
     } catch (Error e) {
-        String err= e.toString() + "Upload files now not present";
+        String err= e.toString() + "Upload files now not present \n";
         verificationErrors.append(err);
     }    
     
