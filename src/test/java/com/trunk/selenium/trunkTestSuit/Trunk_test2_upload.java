@@ -42,7 +42,8 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
 
     */
     WebElement menu = driver.findElement(By.className("menuOpen"));
-    builder.moveToElement(menu).click().build().perform();
+    WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
+    builder.moveToElement(menu).click().moveToElement(upload).click().build().perform();
     // have to click the menu after move to the right location!
     
     try {
@@ -51,12 +52,8 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         String err= e.toString() + "Cannot find Upload Files button in menu \n";
         verificationErrors.append(err);
     }  
-    driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
-    
-             
-    WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
-    builder.moveToElement(upload).build().perform();
-    upload.click();
+    //driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
+    //builder.moveToElement(upload).build().perform();
   
     Thread.sleep(5000);
     
