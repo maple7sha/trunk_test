@@ -50,10 +50,9 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     }    
     
     // upload files 
-    WebElement choosefile = driver.findElement(By.id("content_0"));
-    builder.click(choosefile).sendKeys(key.get_sample_txt()).build().perform();
-
-    verificationErrors.append("test"+key.get_sample_txt());
+    //WebElement choosefile = driver.findElement(By.id("content_0"));
+    
+    builder.sendKeys(key.get_sample_txt()).build().perform();
     Thread.sleep(2000);
     
     driver.findElement(By.id("saveChanges")).submit();
