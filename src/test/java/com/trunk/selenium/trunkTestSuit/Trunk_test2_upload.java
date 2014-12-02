@@ -53,7 +53,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     Thread.sleep(5000);
     
     try {
-        assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files Now')])"), driver));
+        assertTrue(key.isElementPresent(By.xpath("(//h3[contains(text(), 'Upload Files')])"), driver));
     } catch (Error e) {
         String err= e.toString() + "\n Upload files now not present \n";
         verificationErrors.append(err);
