@@ -27,15 +27,6 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     driver.switchTo().frame(driver.findElement(By.xpath("(//iframe[contains(text(), '')])")));
     // Handle hidden menus
     Actions builder = new Actions(driver);  
-    /*
-    try {
-        assertTrue(key.isElementPresent(By.className("menuOpen"), driver));
-    } catch (Error e) {
-        String err= e.toString() + "Cannot find Add menu \n";
-        verificationErrors.append(err);
-    }  
-    driver.findElement(By.className("menuOpen")).click();
-    */
     //WebElement menu = driver.findElement(By.className("menuOpen"));
     WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
@@ -59,9 +50,12 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     }    
     
     // upload files 
-    driver.findElement(By.id("content_0")).sendKeys(key.get_sample_txt());
+    WebElement choosefile = driver.findElement(By.id("content_0"));
+    builder.click(choosefile).sendKeys(key.get_sample_txt()).build().perform();
+
     verificationErrors.append("test"+key.get_sample_txt());
     Thread.sleep(2000);
+    
     driver.findElement(By.id("saveChanges")).submit();
     Thread.sleep(4000);
     
