@@ -30,7 +30,7 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     Actions builder = new Actions(driver); 
     //WebElement menu=driver.findElement(By.xpath("(//li[contains(text(), 'Add')])"));
     
-    
+    /*
     try {
         assertTrue(key.isElementPresent(By.className("menuOpen"), driver));
     } catch (Error e) {
@@ -39,6 +39,12 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
     }  
     driver.findElement(By.className("menuOpen")).click();
     
+
+    */
+    WebElement menu = driver.findElement(By.className("menuOpen"));
+    builder.moveToElement(menu).click().build().perform();
+    // have to click the menu after move to the right location!
+    
     try {
         assertTrue(key.isElementPresent(By.xpath("(//a[contains(text(), 'Upload Files')])"), driver));
     } catch (Error e) {
@@ -46,16 +52,13 @@ public class Trunk_test2_upload {private HtmlUnitDriver driver;
         verificationErrors.append(err);
     }  
     driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])")).click();
-    /*
-    WebElement menu = driver.findElement(By.className("menuOpen"));
-    builder.moveToElement(menu).build().perform();
-    // have to click the menu after move to the right location!
-    menu.click();           
+    
+             
     WebElement upload=driver.findElement(By.xpath("(//a[contains(text(), 'Upload Files')])"));
     builder.moveToElement(upload).build().perform();
     upload.click();
-    */
-    Thread.sleep(3000);
+  
+    Thread.sleep(5000);
     
     
     
